@@ -47,6 +47,7 @@ La musique est à stocker dans le dossier `/home/yunohost.navidrome/Music`.
 ## Liens
 
  * Signaler un bug : https://github.com/YunoHost-Apps/navidrome_ynh/issues
+ * Site de l'application : https://www.navidrome.org/
  * Dépôt de l'application principale : https://github.com/deluan/navidrome/
  * Site web YunoHost : https://yunohost.org/
 
