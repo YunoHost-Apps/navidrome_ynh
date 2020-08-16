@@ -25,6 +25,8 @@ Navidrome est un serveur et un streamer de collection de musique en ligne open s
 
 Vous pouvez configurer Navidrome en modifiant le fichier `/var/lib/navidrome/navidrome.toml` et en vous aidant de la [documentation](https://www.navidrome.org/docs/usage/configuration-options/)
 
+La musique est à stocker dans le dossier `/home/yunohost.navidrome/Music`.
+
 ## Documentation
 
  * Documentation officielle : https://www.navidrome.org/docs/
