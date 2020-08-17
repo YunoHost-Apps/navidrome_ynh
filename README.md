@@ -23,7 +23,7 @@ Navidrome is an open source web-based music collection server and streamer. It g
 
 ## Configuration
 
-You can configure Navidrome by editing this file `/var/lib/navidrome/navidrome.toml` using the [documentation](https://www.navidrome.org/docs/usage/configuration-options/)
+You can configure Navidrome by editing this file `/var/lib/navidrome/navidrome.toml` using the [documentation](https://www.navidrome.org/docs/usage/configuration-options/);
 
 The music is to be stored in the folder `/home/yunohost.navidrome/Music`.
 
@@ -47,6 +47,7 @@ The music is to be stored in the folder `/home/yunohost.navidrome/Music`.
 ## Links
 
  * Report a bug: https://github.com/YunoHost-Apps/navidrome_ynh/issues
+ * App website: https://www.navidrome.org/
  * Upstream app repository: https://github.com/deluan/navidrome/
  * YunoHost website: https://yunohost.org/
 
