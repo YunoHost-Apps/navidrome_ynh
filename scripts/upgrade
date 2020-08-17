@@ -116,6 +116,7 @@ cp ../conf/navidrome.toml "$config_path/navidrome.toml"
 # Main config File
 ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="$config_path/navidrome.toml"
 ynh_replace_string --match_string="__PATH_URL__" --replace_string="$path_url" --target_file="$config_path/navidrome.toml"
+ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="$config_path/navidrome.toml"
 
 ynh_store_file_checksum --file="$config_path/navidrome.toml"
 
@@ -147,18 +148,26 @@ chown -R $app:www-data /home/yunohost.$app/
 chmod -R 764 /home/yunohost.$app
 
 #=================================================
+# SETUP LOGROTATE
+#=================================================
+ynh_script_progression --message="Upgrading logrotate configuration..." --time --weight=1
+
+# Use logrotate to manage app-specific logfile(s)
+ynh_use_logrotate --non-append
+
+#=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
 ynh_script_progression --message="Integrating service in YunoHost..."
 
-yunohost service add $app --description "Web-based music collection server and streamer"
+yunohost service add $app --description "Web-based music collection server and streamer" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="Version:"
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log" --line_match="Version:"
 
 #=================================================
 # RELOAD NGINX
