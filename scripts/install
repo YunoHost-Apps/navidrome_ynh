@@ -149,11 +149,23 @@ chown -R $app:www-data /home/yunohost.$app/
 chmod -R 764 /home/yunohost.$app
 
 #=================================================
+# HANDLE LOG FILES AND SETUP LOGROTATE
+#=================================================
+ynh_script_progression --message="Configuring log rotation..." --weight=1
+
+# FIXME Currently, the log is only redirected to syslog.
+mkdir -p /var/log/$app
+touch /var/log/$app/$app.log
+chown $app -R /var/log/$app
+
+ynh_use_logrotate
+
+#=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
 ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 
-yunohost service add $app --description "Web-based music collection server and streamer"
+yunohost service add $app --description "Web-based music collection server and streamer" --log "/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -161,7 +173,7 @@ yunohost service add $app --description "Web-based music collection server and s
 ynh_script_progression --message="Starting a systemd service..." --weight=2
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="Version:"
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log" --line_match="Version:" 
 
 #=================================================
 # SETUP SSOWAT
