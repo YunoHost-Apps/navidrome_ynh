@@ -76,7 +76,7 @@ ynh_remove_nginx_config
 #=================================================
 # REMOVE LOGROTATE CONFIGURATION
 #=================================================
-ynh_script_progression --message="Removing logrotate configuration..." --weight=1
+ynh_script_progression --message="Removing logs and logrotate configuration..." --weight=1
 
 ynh_secure_remove --file="/var/log/$app"
 

@@ -153,7 +153,6 @@ chmod -R 764 /home/yunohost.$app
 #=================================================
 ynh_script_progression --message="Configuring log rotation..." --weight=1
 
-# FIXME Currently, the log is only redirected to syslog.
 mkdir -p /var/log/$app
 touch /var/log/$app/$app.log
 chown $app -R /var/log/$app
