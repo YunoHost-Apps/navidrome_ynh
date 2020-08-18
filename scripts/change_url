@@ -29,6 +29,7 @@ ynh_script_progression --message="Loading installation settings..." --weight=1
 # Needed for helper "ynh_add_nginx_config"
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
+config_path=$(ynh_app_setting_get --app=$app --key=config_path)
 
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
@@ -107,7 +108,6 @@ fi
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
 path_url="$new_path"
-config_path="/var/lib/$app"
 
 cp ../conf/navidrome.toml "$config_path/navidrome.toml"
 
