@@ -1,7 +1,7 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
-		path="/"            (PATH)
+		path="/path"        (PATH)
 		is_public=1	        (PUBLIC|public=1|private=0)
 		port="4533"	        (PORT)
 	; Checks
