@@ -21,6 +21,7 @@ path_url=$(ynh_app_setting_get --app=$app --key=path)
 is_public=$(ynh_app_setting_get --app=$app --key=is_public)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
+config_path=$(ynh_app_setting_get --app=$app --key=config_path)
 architecture=$(ynh_detect_arch)
 
 #=================================================
@@ -106,7 +107,6 @@ ynh_multimedia_addfolder --source_dir="/home/yunohost.$app/Music" --dest_dir="sh
 #=================================================
 ynh_script_progression --message="Modifying a config file..."
 
-config_path="/var/lib/$app"
 mkdir -p "$config_path"
 
 ynh_backup_if_checksum_is_different --file="$config_path/navidrome.toml"
@@ -140,8 +140,8 @@ ynh_add_systemd_config
 ynh_script_progression --message="Securing files and directories..."
 
 # Set permissions on app files
-chown -R $app:$app $final_path
-chown -R $app:$app $config_path
+chown -R $app:$app "$final_path"
+chown -R $app:$app "$config_path"
 
 # Set permissions on media files
 chown -R $app:www-data /home/yunohost.$app/
