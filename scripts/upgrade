@@ -117,7 +117,7 @@ ynh_multimedia_addfolder --source_dir="/home/yunohost.$app/Music" --dest_dir="sh
 #=================================================
 # ynh_script_progression --message="Modifying a config file..."
 
-# config_path="/var/lib/$app"
+config_path="/var/lib/$app"
 # mkdir -p "$config_path"
 
 # ynh_backup_if_checksum_is_different --file="$config_path/navidrome.toml"
