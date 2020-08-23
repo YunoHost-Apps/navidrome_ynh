@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 ## Vue d'ensemble
 Navidrome est un serveur et un streamer de collection de musique en ligne open source. Il vous donne la liberté d'écouter votre collection de musique à partir de n'importe quel navigateur ou appareil mobile. C'est comme votre Spotify personnel !
 
-**Version incluse :** 0.30.1
+**Version incluse :** 0.31.0
 
 ## Captures d'écran
 
@@ -26,6 +26,8 @@ Navidrome est un serveur et un streamer de collection de musique en ligne open s
 Vous pouvez configurer Navidrome en modifiant le fichier `/var/lib/navidrome/navidrome.toml` et en vous aidant de la [documentation](https://www.navidrome.org/docs/usage/configuration-options/).
 
 La musique est à stocker dans le dossier `/home/yunohost.navidrome/Music`.
+
+Vous devez activer site public si vous souhaitez connecter un lecteur client à Navidrome.
 
 ## Documentation
 
