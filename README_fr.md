@@ -27,6 +27,8 @@ Vous pouvez configurer Navidrome en modifiant le fichier `/var/lib/navidrome/nav
 
 La musique est à stocker dans le dossier `/home/yunohost.navidrome/Music`.
 
+Vous devez activer site public si vous souhaitez connecter un lecteur client à Navidrome.
+
 ## Documentation
 
  * Documentation officielle : https://www.navidrome.org/docs/
