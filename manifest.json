@@ -48,8 +48,8 @@
                     "fr": "Est-ce un site public ?"
                 },
                 "help": {
-                    "en": "If enabled, Navidrome will be accessible by people who do not have an account. This can be changed later via the webadmin.",
-                    "fr": "Si cette case est cochée, Navidrome sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
+                    "en": "You must activate public site if you want to connect a client player to Navidrome. This can be changed later via the webadmin.",
+                    "fr": "Vous devez activer site public si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
                 },
                 "default": true
             }
