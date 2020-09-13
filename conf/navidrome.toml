@@ -19,3 +19,5 @@ SearchFullString = "false"
 IgnoredArticles = "The El La Los Las Le Les Os As O A"
 # Enable/disable .m3u playlist auto-import
 AutoImportPlaylists = "true"
+# The default metadata extractor is still ffmpeg but the you can use the new taglib extractor
+Scanner.Extractor = "taglib"
