@@ -1,23 +1,44 @@
+# Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
+
+# IP address the server will bind to
 Address = "127.0.0.1"
+
+# HTTP port Navidrome will use
 Port = "__PORT__"
+
+# Base URL (only the path part) to configure Navidrome behind a proxy (ex: /music)
 BaseURL = "__PATH_URL__"
+
+# How frequently to scan for changes in your music library. Set it to 0 to disable scans
 ScanInterval = "90s"
+
+# Size of transcoding cache. Set to 0 to disable cache
 TranscodingCacheSize = "150MiB"
+
+# Folder to store application data (DB, cache…)
 DataFolder = "__CONFIG_PATH__"
+
 # Folder where your music library is stored. Can be read-only
 MusicFolder = "/home/yunohost.multimedia/share/Music"
+
 # How long Navidrome will wait before closing web ui idle sessions
 SessionTimeout = "24h"
+
 # Set JPEG quality percentage for resized cover art images
 CoverJpegQuality = "75"
+
 #Configure the order to look for cover art images. Use special embedded value to get embedded images from the audio files
 CoverArtPriority = "embedded, cover.*, folder.*, front.*"
+
 # Match query strings anywhere in searchable fields, not only in word boundaries. Useful for languages where words are not space separated
 SearchFullString = "false"
+
 # List of ignored articles when sorting/indexing artists
 IgnoredArticles = "The El La Los Las Le Les Os As O A"
+
 # Enable/disable .m3u playlist auto-import
 AutoImportPlaylists = "true"
-# The default metadata extractor is still ffmpeg but the you can use the new taglib extractor
+
+# The default metadata extractor is still ffmpeg but you can use the new taglib extractor
 Scanner.Extractor = "taglib"

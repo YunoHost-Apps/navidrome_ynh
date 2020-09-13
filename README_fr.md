@@ -9,7 +9,7 @@
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble
-Navidrome est un serveur et un streamer de collection de musique en ligne open source. Il vous donne la liberté d'écouter votre collection de musique à partir de n'importe quel navigateur ou appareil mobile. C'est comme votre Spotify personnel !
+Navidrome est un serveur et un streamer de collection de musique en ligne open source. Il vous donne la liberté d'écouter votre playlist à partir de n'importe quel navigateur ou appareil mobile.
 
 **Version incluse :** 0.33.0
 
@@ -25,9 +25,9 @@ Navidrome est un serveur et un streamer de collection de musique en ligne open s
 
 #### Où stocker votre musique
 
-Votre musique est stockée par default dans le [dossier multimédia](https://github.com/YunoHost-Apps/yunohost.multimedia) partagé `/home/yunohost.multimedia/share/Music`. Ce dossier est facilement accessible depuis Nextcloud avec *Stockages externes* activée. Cela vous permettra d'envoyer facilement vos fichiers de musique sur votre server.
+Votre musique est a stockée par default dans le [dossier multimédia](https://github.com/YunoHost-Apps/yunohost.multimedia) partagé `/home/yunohost.multimedia/share/Music`. Ce dossier est facilement accessible depuis Nextcloud avec *Stockages externes* activée. Cela vous permettra d'*uploader* facilement vos fichiers de musique sur votre server.
 
-Vous pouvez personnaliser l'endroit ou vous voulez stocker vos fichiers de musique en éditant le fichier de configuration `/var/lib/navidrome/navidrome.toml` et rediriger la variable `MusicFolder = "/home/yunohost.multimedia/share/Music"`. Vous pouvez également changer d'autre réglage en utilisant la [documentation](https://www.navidrome.org/docs/usage/configuration-options/).
+Vous pouvez personnaliser l'endroit ou vous voulez stocker vos fichiers de musique en éditant le fichier de configuration `/var/lib/navidrome/navidrome.toml` et rediriger la variable `MusicFolder = "/home/yunohost.multimedia/share/Music"`. Vous pouvez également changer d'autre réglage en vous aidant de la [documentation](https://www.navidrome.org/docs/usage/configuration-options/).
 
 #### Utilisation d'un client
 
