@@ -23,11 +23,19 @@ Navidrome is an open source web-based music collection server and streamer. It g
 
 ## Configuration
 
+<<<<<<< Updated upstream
 You can configure Navidrome by editing this file `/var/lib/navidrome/navidrome.toml` using the [documentation](https://www.navidrome.org/docs/usage/configuration-options/).
 
 The music is to be stored in the folder `/home/yunohost.navidrome/Music`.
+=======
+#### Where are stored your music files
 
-You must activate public site if you want to connect a client player to Navidrome.
+Your music files are stored in your shared [multimedia folder](https://github.com/YunoHost-Apps/yunohost.multimedia) `/home/yunohost.multimedia/share/Music`. This folder is accessible from Nextcloud with *External Storages* enabled. This will allow you to easily upload your music files to the server.
+
+You can configure an alternative path to you music tracks by editing `MusicFolder` in this file `/var/lib/navidrome/navidrome.toml` using the [documentation](https://www.navidrome.org/docs/usage/configuration-options/).
+>>>>>>> Stashed changes
+
+You must activate *public site* if you want to connect a client player to Navidrome.
 
 ## Documentation
 

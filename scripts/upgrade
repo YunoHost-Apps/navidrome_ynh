@@ -62,7 +62,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=5
 
 	# # Create a temporary directory
-	# tmpdir="$(mktemp -d)"
+	#tmpdir="$(mktemp -d)"
 	# # Backup the config file in the temp dir
 	# cp -a "/var/lib/$app/navidrome.toml" "$tmpdir/navidrome.toml"
 	
@@ -103,21 +103,11 @@ ynh_script_progression --message="Making sure dedicated system user exists..." -
 ynh_system_user_create --username=$app
 
 #=================================================
-# YUNOHOST MULTIMEDIA INTEGRATION
-#=================================================
-ynh_script_progression --message="Adding multimedia directories..." --weight=5
-
-mkdir -p /home/yunohost.$app/Music
-
-ynh_multimedia_build_main_dir
-ynh_multimedia_addfolder --source_dir="/home/yunohost.$app/Music" --dest_dir="share/Music"
-
-#=================================================
 # MODIFY A CONFIG FILE
 #=================================================
 # ynh_script_progression --message="Modifying a config file..."
 
-config_path="/var/lib/$app"
+#config_path="/var/lib/$app"
 # mkdir -p "$config_path"
 
 # ynh_backup_if_checksum_is_different --file="$config_path/navidrome.toml"
@@ -151,12 +141,8 @@ ynh_add_systemd_config
 ynh_script_progression --message="Securing files and directories..."
 
 # Set permissions on app files
-chown -R $app:$app $final_path
-chown -R $app:$app $config_path
-
-# Set permissions on media files
-chown -R $app:www-data /home/yunohost.$app/
-chmod -R 764 /home/yunohost.$app
+chown -R $app: $final_path
+chown -R $app: $config_path
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST

@@ -5,4 +5,21 @@ BaseURL = "__PATH_URL__"
 ScanInterval = "90s"
 TranscodingCacheSize = "150MiB"
 DataFolder = "__CONFIG_PATH__"
+<<<<<<< Updated upstream
 MusicFolder = "/home/yunohost.navidrome/Music"
+=======
+# Folder where your music library is stored. Can be read-only
+MusicFolder = "/home/yunohost.multimedia/share/Music"
+# How long Navidrome will wait before closing web ui idle sessions
+SessionTimeout = "24h"
+# Set JPEG quality percentage for resized cover art images
+CoverJpegQuality = "75"
+#Configure the order to look for cover art images. Use special embedded value to get embedded images from the audio files
+CoverArtPriority = "embedded, cover.*, folder.*, front.*"
+# Match query strings anywhere in searchable fields, not only in word boundaries. Useful for languages where words are not space separated
+SearchFullString = "false"
+# List of ignored articles when sorting/indexing artists
+IgnoredArticles = "The El La Los Las Le Les Os As O A"
+# Enable/disable .m3u playlist auto-import
+AutoImportPlaylists = "true"
+>>>>>>> Stashed changes

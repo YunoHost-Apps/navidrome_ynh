@@ -95,16 +95,11 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=3
 ynh_add_nginx_config
 
 #=================================================
-# SPECIFIC SETUP
-#=================================================
 # YUNOHOST MULTIMEDIA INTEGRATION
 #=================================================
-ynh_script_progression --message="Adding multimedia directories..." --weight=5
-
-mkdir -p /home/yunohost.$app/Music
+ynh_script_progression --message="Adding multimedia directories..." --weight=2
 
 ynh_multimedia_build_main_dir
-ynh_multimedia_addfolder --source_dir="/home/yunohost.$app/Music" --dest_dir="share/Music"
 
 #=================================================
 # MODIFY A CONFIG FILE
@@ -144,10 +139,6 @@ ynh_script_progression --message="Securing files and directories..." --weight=1
 # Set permissions to app files
 chown -R $app:$app "$final_path"
 chown -R $app:$app "$config_path"
-
-# Set permissions to media files
-chown -R $app:www-data /home/yunohost.$app/
-chmod -R 764 /home/yunohost.$app
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
