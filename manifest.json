@@ -8,9 +8,9 @@
     },
     "version": "0.34.0~ynh1",
     "url": "https://github.com/deluan/navidrome/",
-    "license": "AGPL-3.0-only",
+    "license": "GPL-3.0-only",
     "maintainer": {
-        "name": ""
+        "name": "eric_G"
     },
     "requirements": {
         "yunohost": ">= 3.8.1"
