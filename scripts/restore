@@ -52,14 +52,14 @@ ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
 #=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Restoring $app main directory..." --weight=4
+ynh_script_progression --message="Restoring Navidrome main directory..." --weight=4
 
 ynh_restore_file --origin_path="$final_path"
 
 #=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Restoring $app config directory..." --weight=2
+ynh_script_progression --message="Restoring Navidrome config directory..." --weight=2
 
 ynh_restore_file --origin_path="/var/lib/$app"
 
@@ -125,4 +125,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Restoration completed for $app" --last
+ynh_script_progression --message="Restoration completed for Navidrome" --last
