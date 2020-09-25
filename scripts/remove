@@ -26,7 +26,7 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 # REMOVE SERVICE INTEGRATION IN YUNOHOST
 #=================================================
 
-# Remove the service from the list of services known by Yunohost (added from `yunohost service add`)
+# Remove the service from the list of services known by YunoHost (added from `yunohost service add`)
 if ynh_exec_warn_less yunohost service status $app >/dev/null
 then
 	ynh_script_progression --message="Removing $app service..." --weight=1
@@ -52,7 +52,7 @@ ynh_remove_app_dependencies
 #=================================================
 # REMOVE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Removing $app main directory..." --weight=6
+ynh_script_progression --message="Removing Navidrome main directory..." --weight=6
 
 # Remove the app directory securely
 ynh_secure_remove --file="$final_path"
@@ -60,7 +60,7 @@ ynh_secure_remove --file="$final_path"
 #=================================================
 # REMOVE APP CONFIG DIR
 #=================================================
-ynh_script_progression --message="Removing $app config directory..." --weight=6
+ynh_script_progression --message="Removing Navidrome config directory..." --weight=6
 
 # Remove the config directory securely
 ynh_secure_remove --file="/var/lib/$app"
@@ -87,4 +87,4 @@ ynh_system_user_delete --username=$app
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Removal of $app completed" --last
+ynh_script_progression --message="Removal of Navidrome completed" --last

@@ -9,9 +9,9 @@
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble
-Navidrome est un serveur et un streamer de collection de musique en ligne open source. Il vous donne la liberté d'écouter votre collection de musique à partir de n'importe quel navigateur ou appareil mobile. C'est comme votre Spotify personnel !
+Navidrome est un serveur et un streamer de collection de musique en ligne open source. Il vous donne la liberté d'écouter votre playlist à partir de n'importe quel navigateur ou appareil mobile.
 
-**Version incluse :** 0.33.0
+**Version incluse :** 0.34.0
 
 ## Captures d'écran
 
@@ -23,11 +23,15 @@ Navidrome est un serveur et un streamer de collection de musique en ligne open s
 
 ## Configuration
 
-Vous pouvez configurer Navidrome en modifiant le fichier `/var/lib/navidrome/navidrome.toml` et en vous aidant de la [documentation](https://www.navidrome.org/docs/usage/configuration-options/).
+#### Où stocker votre musique
 
-La musique est à stocker dans le dossier `/home/yunohost.navidrome/Music`.
+Votre musique est a stockée par default dans le [dossier multimédia](https://github.com/YunoHost-Apps/yunohost.multimedia) partagé `/home/yunohost.multimedia/share/Music`. Ce dossier, facilement accessible depuis Nextcloud avec *Stockages externes* activée, vous permettra d'*uploader* facilement vos fichiers de musique sur votre server.
 
-Vous devez activer site public si vous souhaitez connecter un lecteur client à Navidrome.
+Vous pouvez personnaliser le dossier de stockage de vos fichiers de musique en éditant le fichier de configuration `/var/lib/navidrome/navidrome.toml` et rediriger la variable `MusicFolder = "/home/yunohost.multimedia/share/Music"`. Vous pouvez également changer d'autre réglage en vous aidant de la [documentation](https://www.navidrome.org/docs/usage/configuration-options/).
+
+#### Utilisation d'un client
+
+Vous devez activer *site public* si vous souhaitez connecter un lecteur client à Navidrome.
 
 ## Documentation
 

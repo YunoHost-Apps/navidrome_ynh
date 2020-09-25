@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/deluan/navidrome/releases/download/v0.33.0/navidrome_0.33.0_Linux_i386.tar.gz
-SOURCE_SUM=677b0a5db655dcb0cf0380b8bb0b631dddbf4125a936c7a1fe7002246e1e6b02
+SOURCE_URL=https://github.com/deluan/navidrome/releases/download/v0.34.0/navidrome_0.34.0_Linux_i386.tar.gz
+SOURCE_SUM=9fba5e08c28fb172387b79c2125a0f777fa2c06fa6fe228b815a7b2622619613
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=false

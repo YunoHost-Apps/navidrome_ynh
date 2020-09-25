@@ -91,20 +91,15 @@ ynh_setup_source --dest_dir=$final_path --source_id="$architecture"
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --weight=3
 
-# Create a dedicated nginx config
+# Create a dedicated NGINX config
 ynh_add_nginx_config
 
 #=================================================
-# SPECIFIC SETUP
-#=================================================
 # YUNOHOST MULTIMEDIA INTEGRATION
 #=================================================
-ynh_script_progression --message="Adding multimedia directories..." --weight=5
-
-mkdir -p /home/yunohost.$app/Music
+ynh_script_progression --message="Adding multimedia directories..." --weight=2
 
 ynh_multimedia_build_main_dir
-ynh_multimedia_addfolder --source_dir="/home/yunohost.$app/Music" --dest_dir="share/Music"
 
 #=================================================
 # MODIFY A CONFIG FILE
@@ -142,12 +137,8 @@ ynh_add_systemd_config
 ynh_script_progression --message="Securing files and directories..." --weight=1
 
 # Set permissions to app files
-chown -R $app:$app "$final_path"
-chown -R $app:$app "$config_path"
-
-# Set permissions to media files
-chown -R $app:www-data /home/yunohost.$app/
-chmod -R 764 /home/yunohost.$app
+chown -R $app: "$final_path"
+chown -R $app: "$config_path"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
@@ -186,4 +177,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression --message="Installation of Navidrome completed" --last
