@@ -33,7 +33,7 @@ upgrade_type=$(ynh_check_app_version_changed)
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
-ynh_script_progression --message="Backing up $app before upgrading (may take a while)..." --weight=4
+ynh_script_progression --message="Backing up Navidrome before upgrading..." --weight=4
 
 # Backup the current version of the app
 ynh_backup_before_upgrade
@@ -62,7 +62,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=5
 
 	# # Create a temporary directory
-	# tmpdir="$(mktemp -d)"
+	#tmpdir="$(mktemp -d)"
 	# # Backup the config file in the temp dir
 	# cp -a "/var/lib/$app/navidrome.toml" "$tmpdir/navidrome.toml"
 	
@@ -103,38 +103,11 @@ ynh_script_progression --message="Making sure dedicated system user exists..." -
 ynh_system_user_create --username=$app
 
 #=================================================
-# YUNOHOST MULTIMEDIA INTEGRATION
-#=================================================
-ynh_script_progression --message="Adding multimedia directories..." --weight=5
-
-mkdir -p /home/yunohost.$app/Music
-
-ynh_multimedia_build_main_dir
-ynh_multimedia_addfolder --source_dir="/home/yunohost.$app/Music" --dest_dir="share/Music"
-
-#=================================================
-# MODIFY A CONFIG FILE
-#=================================================
-# ynh_script_progression --message="Modifying a config file..."
-
-config_path="/var/lib/$app"
-# mkdir -p "$config_path"
-
-# ynh_backup_if_checksum_is_different --file="$config_path/navidrome.toml"
-
-# cp ../conf/navidrome.toml "$config_path/navidrome.toml"
-
-# # Main config File
-# ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="$config_path/navidrome.toml"
-# ynh_replace_string --match_string="__PATH_URL__" --replace_string="$path_url" --target_file="$config_path/navidrome.toml"
-# ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="$config_path/navidrome.toml"
-
-# ynh_store_file_checksum --file="$config_path/navidrome.toml"
-
-#=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=2
+
+config_path="/var/lib/$app"
 
 ynh_replace_string --match_string="__APP__" --replace_string="$app" --target_file="../conf/systemd.service"
 ynh_replace_string --match_string="__FINAL_PATH__" --replace_string="$final_path" --target_file="../conf/systemd.service"
@@ -151,12 +124,8 @@ ynh_add_systemd_config
 ynh_script_progression --message="Securing files and directories..."
 
 # Set permissions on app files
-chown -R $app:$app $final_path
-chown -R $app:$app $config_path
-
-# Set permissions on media files
-chown -R $app:www-data /home/yunohost.$app/
-chmod -R 764 /home/yunohost.$app
+chown -R $app: $final_path
+chown -R $app: $config_path
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
@@ -183,4 +152,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression --message="Upgrade of Navidrome completed" --last
