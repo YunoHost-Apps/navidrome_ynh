@@ -19,7 +19,7 @@ Navidrome is an open source web-based music collection server and streamer. It g
 
 ## Demo
 
-* [Official demo](https://www.navidrome.org/demo/)
+* [Official demo](https://demo.navidrome.org/app/#/login)
 
 ## Configuration
 
