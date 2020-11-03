@@ -11,7 +11,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device.
 
-**Shipped version:** 0.36.1
+**Shipped version:** 0.37.0
 
 ## Screenshots
 
