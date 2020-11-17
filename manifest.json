@@ -6,7 +6,7 @@
         "en": "Modern Music Server and Streamer compatible with Subsonic/Airsonic",
         "fr": "Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic"
     },
-    "version": "0.37.0~ynh1",
+    "version": "0.38.0~ynh1",
     "url": "https://github.com/deluan/navidrome/",
     "license": "GPL-3.0-only",
     "maintainer": {

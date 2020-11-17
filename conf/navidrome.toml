@@ -42,3 +42,21 @@ AutoImportPlaylists = "true"
 
 # The default metadata extractor is still ffmpeg but you can use the new taglib extractor
 Scanner.Extractor = "taglib"
+
+# Last.FM ApiKey
+LastFM.ApiKey = ""
+
+# Last.FM Shared Secret
+LastFM.Secret = ""
+
+# Two letter-code for language to be used to retrieve biographies from Last.FM
+LastFM.Language = "en"
+
+# Spotify Client ID
+Spotify.ID = ""
+
+# Spotify Client Secret
+Spotify.Secret = ""
+
+# Use Gravatar images as the user profile image. Needs the user’s email to be filled 
+EnableGravatar = "false"
