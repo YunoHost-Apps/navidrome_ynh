@@ -1,3 +1,6 @@
+# Load configurations from an external config file
+ConfigFile = "/var/lib/navidrome/navidrome.toml"
+ 
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
 
@@ -14,13 +17,22 @@ BaseURL = "__PATH_URL__"
 ScanInterval = "90s"
 
 # Size of transcoding cache. Set to 0 to disable cache
-TranscodingCacheSize = "150MiB"
+TranscodingCacheSize = "150MB"
+
+# Size of image (art work) cache. Set to 0 to disable cache
+ImageCacheSize = "100MB"
 
 # Folder to store application data (DB, cache…)
 DataFolder = "__CONFIG_PATH__"
 
 # Folder where your music library is stored. Can be read-only
 MusicFolder = "/home/yunohost.multimedia/share/Music"
+
+#Change background image used in the Login page
+UILoginBackgroundUrl = ""
+
+# Add a welcome message to the login screen
+UIWelcomeMessage = ""
 
 # How long Navidrome will wait before closing web ui idle sessions
 SessionTimeout = "24h"
