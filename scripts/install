@@ -118,7 +118,7 @@ ynh_store_file_checksum --file="$config_path/navidrome.toml"
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
-ynh_add_systemd_config --others_var="config_path"
+ynh_add_systemd_config --others_var="$config_path"
 
 #=================================================
 # GENERIC FINALIZATION
