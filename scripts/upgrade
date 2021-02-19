@@ -124,6 +124,7 @@ config_path="/var/lib/$app"
 ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
 # Create a dedicated systemd config
+ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="../conf/systemd.service"
 ynh_add_systemd_config
 
 #=================================================
