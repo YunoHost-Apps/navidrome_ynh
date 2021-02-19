@@ -121,9 +121,7 @@ ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
 config_path="/var/lib/$app"
 
-ynh_replace_string --match_string="__APP__" --replace_string="$app" --target_file="../conf/systemd.service"
-ynh_replace_string --match_string="__FINAL_PATH__" --replace_string="$final_path" --target_file="../conf/systemd.service"
-ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="../conf/systemd.service"
+ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
 # Create a dedicated systemd config
 ynh_add_systemd_config

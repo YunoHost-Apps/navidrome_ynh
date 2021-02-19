@@ -109,13 +109,8 @@ ynh_script_progression --message="Modifying a config file..." --weight=1
 config_path="/var/lib/$app"
 mkdir -p "$config_path"
 
-cp ../conf/navidrome.toml "$config_path/navidrome.toml"
-
 # Main config File
-ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="$config_path/navidrome.toml"
-ynh_replace_string --match_string="__PATH_URL__" --replace_string="$path_url" --target_file="$config_path/navidrome.toml"
-ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="$config_path/navidrome.toml"
-
+ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 ynh_store_file_checksum --file="$config_path/navidrome.toml"
 
 #=================================================
@@ -123,11 +118,7 @@ ynh_store_file_checksum --file="$config_path/navidrome.toml"
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
-ynh_replace_string --match_string="__APP__" --replace_string="$app" --target_file="../conf/systemd.service"
-ynh_replace_string --match_string="__FINAL_PATH__" --replace_string="$final_path" --target_file="../conf/systemd.service"
-ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="../conf/systemd.service"
-
-ynh_add_systemd_config
+ynh_add_systemd_config --others_var="config_path"
 
 #=================================================
 # GENERIC FINALIZATION
