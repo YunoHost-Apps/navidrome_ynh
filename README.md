@@ -36,7 +36,7 @@ You must activate *public site* if you want to connect a client player to Navidr
 ## Documentation
 
  * Official documentation: https://www.navidrome.org/docs/
- * YunoHost documentation: https://yunohost.org/#/app_navidrome
+ * YunoHost documentation: https://yunohost.org/en/app_navidrome
 
 ## YunoHost specific features
 

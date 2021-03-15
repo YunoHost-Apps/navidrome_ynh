@@ -36,7 +36,7 @@ Vous devez activer *site public* si vous souhaitez connecter un lecteur client �
 ## Documentation
 
  * Documentation officielle : https://www.navidrome.org/docs/
- * Documentation YunoHost : https://yunohost.org/#/app_navidrome_fr
+ * Documentation YunoHost : https://yunohost.org/fr/app_navidrome
 
 ## Caractéristiques spécifiques YunoHost
 
