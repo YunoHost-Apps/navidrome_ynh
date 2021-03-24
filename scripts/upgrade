@@ -137,7 +137,7 @@ ynh_script_progression --message="Securing files and directories..."
 chown -R $app:$app "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:$app "$config_path"
-chmod 600 "$config_path/navidrome.toml"
+chmod 600 "/var/lib/$app/navidrome.toml"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST

@@ -110,7 +110,6 @@ mkdir -p "$config_path"
 
 # Main config File
 ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
-ynh_store_file_checksum --file="$config_path/navidrome.toml"
 
 #=================================================
 # SETUP SYSTEMD
@@ -131,7 +130,7 @@ ynh_script_progression --message="Securing files and directories..." --weight=1
 chown -R $app:$app "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:$app "$config_path"
-chmod 600 "$config_path/navidrome.toml"
+chmod 600 "/var/lib/$app/navidrome.toml"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
