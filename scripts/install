@@ -46,8 +46,8 @@ ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 #=================================================
 ynh_script_progression --message="Storing installation settings..." --weight=2
 
-ynh_app_setting_set --app=$app --key=domain    --value=$domain
-ynh_app_setting_set --app=$app --key=path      --value=$path_url
+ynh_app_setting_set --app=$app --key=domain --value=$domain
+ynh_app_setting_set --app=$app --key=path --value=$path_url
 
 #=================================================
 # STANDARD MODIFICATIONS
@@ -128,8 +128,10 @@ ynh_add_systemd_config
 ynh_script_progression --message="Securing files and directories..." --weight=1
 
 # Set permissions to app files
-chown -R $app: "$final_path"
-chown -R $app: "$config_path"
+chown -R $app:$app "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:$app "$config_path"
+chmod 600 "$config_path/navidrome.toml"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST

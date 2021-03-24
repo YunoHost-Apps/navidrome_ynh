@@ -134,8 +134,10 @@ ynh_add_systemd_config
 ynh_script_progression --message="Securing files and directories..."
 
 # Set permissions on app files
-chown -R $app: $final_path
-chown -R $app: $config_path
+chown -R $app:$app "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:$app "$config_path"
+chmod 600 "$config_path/navidrome.toml"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
