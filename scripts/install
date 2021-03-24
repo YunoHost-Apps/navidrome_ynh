@@ -46,9 +46,8 @@ ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 #=================================================
 ynh_script_progression --message="Storing installation settings..." --weight=2
 
-ynh_app_setting_set --app=$app --key=domain    --value=$domain
-ynh_app_setting_set --app=$app --key=path      --value=$path_url
-ynh_app_setting_set --app=$app --key=is_public --value=$is_public
+ynh_app_setting_set --app=$app --key=domain --value=$domain
+ynh_app_setting_set --app=$app --key=path --value=$path_url
 
 #=================================================
 # STANDARD MODIFICATIONS
@@ -109,24 +108,15 @@ ynh_script_progression --message="Modifying a config file..." --weight=1
 config_path="/var/lib/$app"
 mkdir -p "$config_path"
 
-cp ../conf/navidrome.toml "$config_path/navidrome.toml"
-
 # Main config File
-ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="$config_path/navidrome.toml"
-ynh_replace_string --match_string="__PATH_URL__" --replace_string="$path_url" --target_file="$config_path/navidrome.toml"
-ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="$config_path/navidrome.toml"
-
-ynh_store_file_checksum --file="$config_path/navidrome.toml"
+ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
-ynh_replace_string --match_string="__APP__" --replace_string="$app" --target_file="../conf/systemd.service"
-ynh_replace_string --match_string="__FINAL_PATH__" --replace_string="$final_path" --target_file="../conf/systemd.service"
 ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="../conf/systemd.service"
-
 ynh_add_systemd_config
 
 #=================================================
@@ -137,8 +127,10 @@ ynh_add_systemd_config
 ynh_script_progression --message="Securing files and directories..." --weight=1
 
 # Set permissions to app files
-chown -R $app: "$final_path"
-chown -R $app: "$config_path"
+chown -R $app:$app "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:$app "$config_path"
+chmod 600 "/var/lib/$app/navidrome.toml"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
