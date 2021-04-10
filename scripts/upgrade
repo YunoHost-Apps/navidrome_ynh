@@ -80,22 +80,11 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=5
 
-	# Create a temporary directory
-	tmpdir="$(mktemp -d)"
-	# Backup the config file in the temp dir
-	cp -a "/var/lib/$app/navidrome.toml" "$tmpdir/navidrome.toml"
-	
 	# Remove the app directory securely
 	ynh_secure_remove --file=$final_path
 
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir=$final_path --source_id="$architecture"
-
-	# Copy the admin saved settings from tmp directory to final config path	
-	cp -a "$tmpdir/navidrome.toml" "/var/lib/$app/navidrome.toml" 
-
-	# Remove the tmp directory securely
-	ynh_secure_remove --file="$tmpdir"
 fi
 
 #=================================================
