@@ -47,8 +47,8 @@ Vous devez activer *site public* si vous souhaitez connecter un lecteur client √
 
 #### Architectures support√©es
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/navidrome%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/navidrome%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/navidrome/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/navidrome.svg)](https://ci-apps-arm.yunohost.org/ci/apps/navidrome/)
 
 ## Liens
 
