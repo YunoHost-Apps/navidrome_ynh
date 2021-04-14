@@ -28,6 +28,9 @@ DataFolder = "__CONFIG_PATH__"
 # Folder where your music library is stored. Can be read-only
 MusicFolder = "/home/yunohost.multimedia/share/Music"
 
+# Enable the option in the UI to download music/albums/artists/playlists from the server
+EnableDownloads = "true"
+
 #Change background image used in the Login page
 UILoginBackgroundUrl = ""
 

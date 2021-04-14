@@ -11,7 +11,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device.
 
-**Shipped version:** 0.41.0
+**Shipped version:** 0.41.1
 
 ## Screenshots
 
@@ -47,8 +47,8 @@ You must activate *public site* if you want to connect a client player to Navidr
 
 #### Supported architectures
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/navidrome%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/navidrome%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/navidrome/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/navidrome.svg)](https://ci-apps-arm.yunohost.org/ci/apps/navidrome/)
 
 ## Links
 

@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 ## Vue d'ensemble
 Navidrome est un serveur et un streamer de collection de musique en ligne open source. Il vous donne la liberté d'écouter votre playlist à partir de n'importe quel navigateur ou appareil mobile.
 
-**Version incluse :** 0.41.0
+**Version incluse :** 0.41.1
 
 ## Captures d'écran
 
@@ -47,8 +47,8 @@ Vous devez activer *site public* si vous souhaitez connecter un lecteur client �
 
 #### Architectures supportées
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/navidrome%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/navidrome%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/navidrome/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/navidrome.svg)](https://ci-apps-arm.yunohost.org/ci/apps/navidrome/)
 
 ## Liens
 
