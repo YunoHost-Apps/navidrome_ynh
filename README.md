@@ -6,12 +6,12 @@
 *[Lire ce readme en français.](./README_fr.md)*
 
 > *This package allows you to install Navidrome quickly and simply on a YunoHost server.  
-If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
+If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
 
 ## Overview
 Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device.
 
-**Shipped version:** 0.41.1
+**Shipped version:** 0.42.0
 
 ## Screenshots
 
