@@ -109,15 +109,6 @@ ynh_script_progression --message="Modifying a config file..." --weight=1
 config_path="/var/lib/$app"
 path_url="$new_path"
 
-# cp ../conf/navidrome.toml "$config_path/navidrome.toml"
-
-# # Main config File
-# ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="$config_path/navidrome.toml"
-# ynh_replace_string --match_string="__PATH_URL__" --replace_string="$path_url" --target_file="$config_path/navidrome.toml"
-# ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="$config_path/navidrome.toml"
-
-# ynh_store_file_checksum --file="$config_path/navidrome.toml"
-
 ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
 #=================================================
