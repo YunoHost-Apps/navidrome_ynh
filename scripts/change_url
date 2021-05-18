@@ -31,9 +31,9 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
 
 #=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
+# BACKUP BEFORE CHANGE URL THEN ACTIVE TRAP
 #=================================================
-ynh_script_progression --message="Backing up Navidrome before changing its URL..." --weight=1
+ynh_script_progression --message="Backing up the app before changing its URL (may take a while)..." --weight=1
 
 # Backup the current version of the app
 ynh_backup_before_upgrade
@@ -41,7 +41,7 @@ ynh_clean_setup () {
 	# Remove the new domain config file, the remove script won't do it as it doesn't know yet its location.
 	ynh_secure_remove --file="/etc/nginx/conf.d/$new_domain.d/$app.conf"
 
-	# restore it if the upgrade fails
+	# Restore it if the upgrade fails
 	ynh_restore_upgradebackup
 }
 # Exit if an error occurs during the execution of the script
@@ -70,7 +70,7 @@ fi
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action=stop --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # MODIFY URL IN NGINX CONF
@@ -111,6 +111,9 @@ path_url="$new_path"
 
 ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
+chmod 600 "$config_path/navidrome.toml"
+chown -R $app:$app "$config_path"
+
 #=================================================
 # GENERIC FINALISATION
 #=================================================
@@ -119,7 +122,7 @@ ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/n
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="Version:"
+ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
 
 #=================================================
 # RELOAD NGINX
