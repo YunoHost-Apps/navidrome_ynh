@@ -1,9 +1,9 @@
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		path="/"            (PATH)
-		is_public=1	        (PUBLIC|public=1|private=0)
-		port="4533"	        (PORT)
+		domain="domain.tld"
+		path="/"
+		is_public=1
+		port="4533"
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
