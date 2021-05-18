@@ -81,9 +81,12 @@ ynh_system_user_create --username=$app --home_dir=$final_path
 ynh_script_progression --message="Setting up source files..." --weight=4
 
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir=$final_path --source_id="$architecture"
+
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:$app "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
@@ -111,27 +114,19 @@ mkdir -p "$config_path"
 # Main config File
 ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
+chmod 600 "$config_path/navidrome.toml"
+chown -R $app:$app "$config_path"
+
 #=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
-ynh_replace_string --match_string="__CONFIG_PATH__" --replace_string="$config_path" --target_file="../conf/systemd.service"
+# Create a dedicated systemd config
 ynh_add_systemd_config
 
 #=================================================
 # GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-ynh_script_progression --message="Securing files and directories..." --weight=1
-
-# Set permissions to app files
-chown -R $app:$app "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:$app "$config_path"
-chmod 600 "/var/lib/$app/navidrome.toml"
-
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
@@ -145,16 +140,18 @@ yunohost service add $app --description "Web-based music collection server and s
 ynh_script_progression --message="Starting a systemd service..." --weight=2
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="Version:"
+ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
 
 #=================================================
 # SETUP SSOWAT
 #=================================================
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
-# Make app public if necessary or protect it
+# Make app public if necessary
 if [ $is_public -eq 1 ]
 then
+	# Everyone can access the app.
+	# The "main" permission is automatically created before the install script.
 	ynh_permission_update --permission="main" --add="visitors"
 fi
 
@@ -169,4 +166,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of Navidrome completed" --last
+ynh_script_progression --message="Installation of $app completed" --last
