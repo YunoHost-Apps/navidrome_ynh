@@ -44,7 +44,7 @@ You must activate *public site* if you want to connect a client player to Navidr
 * Official app website: https://www.navidrome.org
 * Official user documentation: https://yunohost.org/en/app_navidrome
 * Official admin documentation: https://www.navidrome.org/docs
-* Upstream app code repository:  https://github.com/deluan/navidrome
+* Upstream app code repository: https://github.com/deluan/navidrome
 * YunoHost documentation for this app: https://yunohost.org/app_navidrome
 * Report a bug: https://github.com/YunoHost-Apps/navidrome_ynh/issues
 
