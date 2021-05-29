@@ -14,7 +14,7 @@ Port = "__PORT__"
 BaseURL = "__PATH_URL__"
 
 # Configure periodic scans using “cron” syntax. To disable it altogether, set it to "" (empty string)
-ScanSchedule = "@every 2m"
+ScanSchedule = "@every 1m30s"
 
 # Size of transcoding cache. Set to 0 to disable cache
 TranscodingCacheSize = "150MB"
