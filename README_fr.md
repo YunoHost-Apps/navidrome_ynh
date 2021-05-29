@@ -1,7 +1,7 @@
 # Navidrome pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)  
-[![Installer Navidrome avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
+[![Niveau d'intégration](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg)  ![](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Installer navidrome avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
 *[Read this readme in english.](./README.md)*
 *[Lire ce readme en français.](./README_fr.md)*
@@ -20,7 +20,6 @@ Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic
 ## Captures d'écran
 
 ![](./doc/screenshots/ss-desktop-player.png)
-
 ## Avertissements / informations importantes
 
 ## Configuration
@@ -51,7 +50,7 @@ Merci de faire vos pull request sur la [branche testing](https://github.com/Yuno
 Pour essayer la branche testing, procédez comme suit.
 ```
 sudo yunohost app install https://github.com/YunoHost-Apps/navidrome_ynh/tree/testing --debug
-ou
+or
 sudo yunohost app upgrade navidrome -u https://github.com/YunoHost-Apps/navidrome_ynh/tree/testing --debug
 ```
 
