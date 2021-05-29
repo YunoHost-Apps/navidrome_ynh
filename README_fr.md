@@ -1,12 +1,12 @@
 # Navidrome pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg)  ![](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
-[![Installer navidrome avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
+[![Niveau d'intégration](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)  
+[![Installer Navidrome avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
 *[Read this readme in english.](./README.md)*
 *[Lire ce readme en français.](./README_fr.md)*
 
-> *This package allows you to install navidrome quickly and simply on a YunoHost server.
+> *This package allows you to install Navidrome quickly and simply on a YunoHost server.
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Vue d'ensemble
@@ -15,16 +15,11 @@ Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic
 
 **Version incluse:** 0.43.0~ynh1
 
-**Démo:** https://demo.navidrome.org/app/#/login
-
+**Démo :** https://demo.navidrome.org/app/#/login
 
 ## Captures d'écran
 
-
-   ![](./doc/screenshots/ss-desktop-player.png)
-
-
-
+![](./doc/screenshots/ss-desktop-player.png)
 
 ## Avertissements / informations importantes
 
@@ -40,15 +35,13 @@ Vous pouvez personnaliser le dossier de stockage de vos fichiers de musique en �
 
 Vous devez activer *site public* si vous souhaitez connecter un lecteur client à Navidrome.
 
-
-
 ## Documentations et ressources
 
-* Site official de l'app : https://www.navidrome.org
-* Documentation officielle utilisateur: https://yunohost.org/en/app_navidrome
-* Documentation officielle de l'admin: https://www.navidrome.org/docs
-* Dépôt de code officiel de l'app:  https://github.com/deluan/navidrome
-* Documentation YunoHost pour cette app: https://yunohost.org/app_navidrome
+* Site officiel de l'app : https://www.navidrome.org
+* Documentation officielle utilisateur : https://yunohost.org/en/app_navidrome
+* Documentation officielle de l'admin : https://www.navidrome.org/docs
+* Dépôt de code officiel de l'app :  https://github.com/deluan/navidrome
+* Documentation YunoHost pour cette app : https://yunohost.org/app_navidrome
 * Signaler un bug: https://github.com/YunoHost-Apps/navidrome_ynh/issues
 
 ## Informations pour les développeurs
