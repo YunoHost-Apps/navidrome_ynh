@@ -13,8 +13,8 @@ Port = "__PORT__"
 # Base URL (only the path part) to configure Navidrome behind a proxy (ex: /music)
 BaseURL = "__PATH_URL__"
 
-# How frequently to scan for changes in your music library. Set it to 0 to disable scans
-ScanInterval = "90s"
+# Configure periodic scans using “cron” syntax. To disable it altogether, set it to "" (empty string)
+ScanSchedule = "@every 2m"
 
 # Size of transcoding cache. Set to 0 to disable cache
 TranscodingCacheSize = "150MB"
