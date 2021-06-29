@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic
 
-**Version incluse :** 0.43.0~ynh2
+**Version incluse :** 0.44.0~ynh1
 
 **Démo :** https://demo.navidrome.org/app/#/login
 

@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Modern Music Server and Streamer compatible with Subsonic/Airsonic
 
-**Shipped version:** 0.43.0~ynh2
+**Shipped version:** 0.44.0~ynh1
 
 **Demo:** https://demo.navidrome.org/app/#/login
 
