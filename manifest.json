@@ -32,7 +32,7 @@
             {
                 "name": "domain",
                 "type": "domain",
-                "example": "domain.org"
+                "example": "example.com"
             },
             {
                 "name": "path",
