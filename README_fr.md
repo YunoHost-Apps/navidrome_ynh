@@ -11,7 +11,9 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic
+Navidrome un logiciel qui vous permet d'écouter votre propre musique numérique de la même manière que vous le feriez avec des services comme Spotify, Apple Music et autres. Il vous permet également de partager facilement votre musique et vos listes de lecture avec vos amis et votre famille.
+Navidrome indexe toute la musique numérique stockée sur votre disque dur et la rend disponible via un agréable lecteur Web et également en utilisant n'importe quel client mobile compatible Subsonic-API. Votre musique devient consultable et vous pouvez créer des listes de lecture, évaluer et « favori » vos morceaux, albums et artistes préférés 
+
 
 **Version incluse :** 0.45.1~ynh1
 
