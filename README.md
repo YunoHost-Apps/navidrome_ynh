@@ -18,7 +18,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 Navidrome a software that allows you to listen to your own digital music in the same way you would with services like Spotify, Apple Music and others. It also allows you to easily share your music and playlists with your friends and family.s
 Navidrome indexes all digital music stored in your hard drive and makes it available through a nice web player and also by using any Subsonic-API compatible mobile client. Your music becomes searchable and you can create playlists, rate and “favourite” your loved tracks, albums and artists
 
-**Shipped version:** 0.45.1~ynh1
+**Shipped version:** 0.46.0~ynh1
 
 **Demo:** https://demo.navidrome.org/app/#/login
 
@@ -43,7 +43,6 @@ You must activate *public site* if you want to connect a client player to Navidr
 ## Documentation and resources
 
 * Official app website: https://www.navidrome.org
-* Official user documentation: https://yunohost.org/en/app_navidrome
 * Official admin documentation: https://www.navidrome.org/docs
 * Upstream app code repository: https://github.com/deluan/navidrome
 * YunoHost documentation for this app: https://yunohost.org/app_navidrome
