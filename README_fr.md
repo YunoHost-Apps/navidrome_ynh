@@ -40,7 +40,6 @@ Vous devez activer *site public* si vous souhaitez connecter un lecteur client �
 ## Documentations et ressources
 
 * Site officiel de l'app : https://www.navidrome.org
-* Documentation officielle utilisateur : https://yunohost.org/en/app_navidrome
 * Documentation officielle de l'admin : https://www.navidrome.org/docs
 * Dépôt de code officiel de l'app : https://github.com/deluan/navidrome
 * Documentation YunoHost pour cette app : https://yunohost.org/app_navidrome
