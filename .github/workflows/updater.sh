@@ -75,9 +75,6 @@ case $asset_url in    navidrome_"*"_Linux_arm64.tar.gz
   navidrome_"*"_Linux_armv7.tar.gz)
     src="armv7"
     ;;
-  navidrome_"*"_Linux_i386.tar.gz)
-    src="i386"
-    ;;
   navidrome_"*"_Linux_x86_64.tar.gz)
     src="x86-64"
     ;;
