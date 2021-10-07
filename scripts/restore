@@ -14,9 +14,6 @@ source /usr/share/yunohost/helpers
 # MANAGE SCRIPT FAILURE
 #=================================================
 
-ynh_clean_setup () {
-	ynh_clean_check_starting
-}
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
 
@@ -36,8 +33,6 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 #=================================================
 ynh_script_progression --message="Validating restoration parameters..." --weight=2
 
-ynh_webpath_available --domain=$domain --path_url=$path_url \
-	|| ynh_die --message="Path not available: ${domain}${path_url}"
 test ! -d $final_path \
 	|| ynh_die --message="There is already a directory: $final_path "
 
