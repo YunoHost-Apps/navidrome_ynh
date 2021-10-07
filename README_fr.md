@@ -15,7 +15,7 @@ Navidrome un logiciel qui vous permet d'écouter votre propre musique numérique
 Navidrome indexe toute la musique numérique stockée sur votre disque dur et la rend disponible via un agréable lecteur Web et également en utilisant n'importe quel client mobile compatible Subsonic-API. Votre musique devient consultable et vous pouvez créer des listes de lecture, évaluer et « favori » vos morceaux, albums et artistes préférés 
 
 
-**Version incluse :** 0.45.1~ynh1
+**Version incluse :** 0.46.0~ynh1
 
 **Démo :** https://demo.navidrome.org/app/#/login
 
