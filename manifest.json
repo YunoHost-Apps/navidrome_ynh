@@ -6,7 +6,7 @@
         "en": "Modern Music Server and Streamer compatible with Subsonic/Airsonic",
         "fr": "Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic"
     },
-    "version": "0.46.0~ynh1",
+    "version": "0.47.0~ynh1",
     "url": "https://www.navidrome.org",
     "upstream": {
         "license": "GPL-3.0-only",
@@ -20,7 +20,7 @@
         "name": "eric_G"
     },
     "requirements": {
-        "yunohost": ">= 4.2.4"
+        "yunohost": ">= 4.3.0"
     },
     "multi_instance": false,
     "services": [
