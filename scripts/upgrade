@@ -23,6 +23,7 @@ port=$(ynh_app_setting_get --app=$app --key=port)
 architecture=$YNH_ARCH
 
 enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
+scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
 
 #=================================================
 # CHECK VERSION
@@ -58,9 +59,14 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
 
-if [ -z "$enable_downloads" ] ||
+if [ -z "$enable_downloads" ]; then
 	enable_downloads="true"
 	ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
+fi
+
+if [ -z "$scanner_extractor" ]; then
+	scanner_extractor="true"
+	ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
 fi
 
 # Cleaning legacy permissions
