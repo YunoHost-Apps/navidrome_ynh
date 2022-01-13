@@ -7,9 +7,8 @@ name = "Navidrome configuration"
     name = "Navidrome configuration"
     services = ["__APP__"]
 
-        [main.config.EnableDownloads]
+        [main.config.enable_downloads]
         ask = "Allow music download from the server?"
         type = "boolean"
-        default = true
         help = "Enable the option in the UI to download music/albums/artists/playlists from the server"
-        bind = ":/var/lib/navidrome/navidrome.toml"
+        bind = "EnableDownloads:/var/lib/navidrome/navidrome.toml"

@@ -22,7 +22,7 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
 architecture=$YNH_ARCH
 
-EnableDownloads=$(ynh_app_setting_get --app=$app --key=EnableDownloads)
+enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
 
 #=================================================
 # CHECK VERSION
@@ -58,9 +58,9 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
 
-if [ -z "$EnableDownloads" ] ||
-	EnableDownloads="true"
-	ynh_app_setting_set --app=$app --key=EnableDownloads --value=$EnableDownloads
+if [ -z "$enable_downloads" ] ||
+	enable_downloads="true"
+	ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
 fi
 
 # Cleaning legacy permissions
