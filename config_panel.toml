@@ -18,5 +18,5 @@ services = ["__APP__"]
         type = "select"
         choices = ["taglib", "ffmpeg"]
         default = "taglib"
-        help = "Select metadata extractor implementation."
+        help = "Select metadata extractor implementation"
         bind = "Scanner.Extractor:/var/lib/navidrome/navidrome.toml"
