@@ -27,6 +27,9 @@ architecture=$YNH_ARCH
 
 app=$YNH_APP_INSTANCE_NAME
 
+
+EnableDownloads="true"
+
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
@@ -45,7 +48,7 @@ ynh_script_progression --message="Storing installation settings..." --weight=2
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
-ynh_app_setting_set --app=$app --key=EnableDownloads --value="1"
+ynh_app_setting_set --app=$app --key=EnableDownloads --value=$EnableDownloads
 
 #=================================================
 # STANDARD MODIFICATIONS
