@@ -2,10 +2,10 @@ version = "1.0"
 
 [main]
 name = "Navidrome configuration"
+services = ["__APP__"]
 
     [main.config]
     name = "Navidrome configuration"
-    services = ["__APP__"]
 
         [main.config.enable_downloads]
         ask = "Allow music download"
