@@ -29,7 +29,7 @@ DataFolder = "__CONFIG_PATH__"
 MusicFolder = "/home/yunohost.multimedia/share/Music"
 
 # Enable the option in the UI to download music/albums/artists/playlists from the server
-EnableDownloads = "true"
+EnableDownloads = "__ENABLE_DOWNLOADS__"
 
 #Change background image used in the Login page
 UILoginBackgroundUrl = ""
@@ -56,7 +56,7 @@ IgnoredArticles = "The El La Los Las Le Les Os As O A"
 AutoImportPlaylists = "true"
 
 # The default metadata extractor is still ffmpeg but you can use the new taglib extractor
-Scanner.Extractor = "taglib"
+Scanner.Extractor = "__SCANNER_EXTRACTOR__"
 
 # Last.FM ApiKey
 LastFM.ApiKey = ""
