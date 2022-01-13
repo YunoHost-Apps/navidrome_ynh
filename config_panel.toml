@@ -1,0 +1,15 @@
+version = "1.0"
+
+[main]
+name = "Settings"
+
+    [main.global_config]
+    name = "Access options"
+
+    services = ["nginx", "__APP__"]
+
+        [main.global_config.enable_downloads]
+        ask = "Allow music download from the server?"
+        type = "boolean"
+        help = "Enable the option in the UI to download music/albums/artists/playlists from the server"
+        bind = "EnableDownloads:__CONFIG_PATH__/navidrome.toml"
