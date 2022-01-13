@@ -28,8 +28,8 @@ architecture=$YNH_ARCH
 app=$YNH_APP_INSTANCE_NAME
 
 scanner_extractor="taglib"
-enable_downloads="1"
-enable_animation="1"
+enable_downloads="true"
+enable_animation="true"
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
