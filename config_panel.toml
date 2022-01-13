@@ -6,7 +6,7 @@ name = "Navidrome configuration"
     [main.config]
     name = "Navidrome configuration"
 
-    services = ["nginx", "__APP__"]
+    services = ["__APP__"]
 
         [main.config.enable_downloads]
         ask = "Allow music download from the server?"
