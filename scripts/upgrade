@@ -61,17 +61,17 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
 
 if [ -z "$enable_animation" ]; then
-	enable_animation="true"
+	enable_animation="1"
 	ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
 fi
 
 if [ -z "$enable_downloads" ]; then
-	enable_downloads="true"
+	enable_downloads="1"
 	ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
 fi
 
 if [ -z "$scanner_extractor" ]; then
-	scanner_extractor="true"
+	scanner_extractor="taglib"
 	ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
 fi
 
