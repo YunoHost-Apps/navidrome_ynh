@@ -37,6 +37,9 @@ UILoginBackgroundUrl = ""
 # Add a welcome message to the login screen
 UIWelcomeMessage = ""
 
+# Controls whether the player in the UI will animate the album cover (rotation)
+EnableCoverAnimation = "__ENABLE_ANIMATION__"
+
 # How long Navidrome will wait before closing web ui idle sessions
 SessionTimeout = "24h"
 

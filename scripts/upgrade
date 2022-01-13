@@ -24,6 +24,7 @@ architecture=$YNH_ARCH
 
 enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
 scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
+enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
 
 #=================================================
 # CHECK VERSION
@@ -58,6 +59,11 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+
+if [ -z "$enable_animation" ]; then
+	enable_animation="true"
+	ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
+fi
 
 if [ -z "$enable_downloads" ]; then
 	enable_downloads="true"

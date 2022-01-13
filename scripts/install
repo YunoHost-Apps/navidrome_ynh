@@ -29,6 +29,7 @@ app=$YNH_APP_INSTANCE_NAME
 
 enable_downloads="true"
 scanner_extractor="taglib"
+enable_animation="true"
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -50,6 +51,7 @@ ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
 ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
 ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
+ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
 
 #=================================================
 # STANDARD MODIFICATIONS

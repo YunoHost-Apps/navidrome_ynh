@@ -7,6 +7,12 @@ services = ["__APP__"]
     [main.config]
     name = "Configuration Options"
 
+        [main.config.enable_animation]
+        ask = "Enable cover animation"
+        type = "boolean"
+        help = "Controls whether the player in the UI will animate the album cover"
+        bind = "EnableCoverAnimation:/var/lib/navidrome/navidrome.toml"
+
         [main.config.enable_downloads]
         ask = "Allow music download"
         type = "boolean"
