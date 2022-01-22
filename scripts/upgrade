@@ -20,7 +20,11 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
-architecture=$(ynh_detect_arch)
+architecture=$YNH_ARCH
+
+enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
+scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
+enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
 
 #=================================================
 # CHECK VERSION
@@ -55,6 +59,21 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+
+if [ -z "$enable_animation" ]; then
+	enable_animation="true"
+	ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
+fi
+
+if [ -z "$enable_downloads" ]; then
+	enable_downloads="true"
+	ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
+fi
+
+if [ -z "$scanner_extractor" ]; then
+	scanner_extractor="taglib"
+	ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
+fi
 
 # Cleaning legacy permissions
 if ynh_legacy_permissions_exists; then
@@ -113,7 +132,7 @@ ynh_script_progression --message="Updating a configuration file..."
 config_path="/var/lib/$app"
 
 # Uncomment when there is new options added upstream
-#ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
+ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
 chmod 600 "$config_path/navidrome.toml"
 chown -R $app:$app "$config_path"
