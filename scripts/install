@@ -30,6 +30,8 @@ app=$YNH_APP_INSTANCE_NAME
 scanner_extractor="taglib"
 enable_downloads="true"
 enable_animation="true"
+enable_transcoding="false"
+welcome_message=""
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -52,6 +54,8 @@ ynh_app_setting_set --app=$app --key=path --value=$path_url
 ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
 ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
 ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
+ynh_app_setting_set --app=$app --key=enable_transcoding --value=$enable_transcoding
+ynh_app_setting_set --app=$app --key=welcome_message --value=$welcome_message
 
 #=================================================
 # STANDARD MODIFICATIONS
