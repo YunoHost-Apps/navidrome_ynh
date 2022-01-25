@@ -40,9 +40,7 @@ services = ["__APP__"]
         bind = "EnableTranscodingConfig:/var/lib/navidrome/navidrome.toml"
 
         [main.config.welcome_message]
-        ask = "welcome message"
+        ask = "Welcome message"
         type = "string"
         help = "Add a welcome message to the login screen"
         bind = "UIWelcomeMessage:/var/lib/navidrome/navidrome.toml"
-
-
