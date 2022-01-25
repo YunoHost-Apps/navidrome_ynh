@@ -25,6 +25,8 @@ architecture=$YNH_ARCH
 enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
 scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
 enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
+enable_transcoding=$(ynh_app_setting_get --app=$app --key=enable_transcoding)
+welcome_message=$(ynh_app_setting_get --app=$app --key=welcome_message)
 
 #=================================================
 # CHECK VERSION
@@ -73,6 +75,16 @@ fi
 if [ -z "$scanner_extractor" ]; then
 	scanner_extractor="taglib"
 	ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
+fi
+
+if [ -z "$enable_transcoding" ]; then
+	enable_transcoding="false"
+	ynh_app_setting_set --app=$app --key=enable_transcoding --value=$enable_transcoding
+fi
+
+if [ -z "$welcome_message" ]; then
+	welcome_message=""
+	ynh_app_setting_set --app=$app --key=welcome_message --value=$welcome_message
 fi
 
 # Cleaning legacy permissions
