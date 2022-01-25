@@ -33,6 +33,8 @@ port=$(ynh_app_setting_get --app=$app --key=port)
 enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
 scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
 enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
+enable_transcoding=$(ynh_app_setting_get --app=$app --key=enable_transcoding)
+welcome_message=$(ynh_app_setting_get --app=$app --key=welcome_message)
 
 #=================================================
 # BACKUP BEFORE CHANGE URL THEN ACTIVE TRAP
