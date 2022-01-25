@@ -16,6 +16,9 @@ BaseURL = "__PATH_URL__"
 # Configure periodic scans using “cron” syntax. To disable it altogether, set it to "" (empty string)
 ScanSchedule = "@every 1m30s"
 
+# Enables transcoding configuration in the UI
+EnableTranscodingConfig = "__ENABLE_TRANSCODING__"
+
 # Size of transcoding cache. Set to 0 to disable cache
 TranscodingCacheSize = "150MB"
 
@@ -35,7 +38,7 @@ EnableDownloads = "__ENABLE_DOWNLOADS__"
 UILoginBackgroundUrl = ""
 
 # Add a welcome message to the login screen
-UIWelcomeMessage = ""
+UIWelcomeMessage = "__WELCOME_MESSAGE__"
 
 # Controls whether the player in the UI will animate the album cover (rotation)
 EnableCoverAnimation = "__ENABLE_ANIMATION__"

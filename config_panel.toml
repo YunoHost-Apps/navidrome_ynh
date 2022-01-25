@@ -30,3 +30,17 @@ services = ["__APP__"]
         default = "taglib"
         help = "Select metadata extractor implementation"
         bind = "Scanner.Extractor:/var/lib/navidrome/navidrome.toml"
+
+        [main.config.enable_transcoding]
+        ask = "Enable transcoding"
+        type = "boolean"
+        yes = "true"
+        no = "false"
+        help = "Enables transcoding configuration in the UI"
+        bind = "EnableTranscodingConfig:/var/lib/navidrome/navidrome.toml"
+
+        [main.config.welcome_message]
+        ask = "Welcome message"
+        type = "string"
+        help = "Add a welcome message to the login screen"
+        bind = "UIWelcomeMessage:/var/lib/navidrome/navidrome.toml"
