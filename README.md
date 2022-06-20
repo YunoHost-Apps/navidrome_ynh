@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Navidrome for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![Working status](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)  
 [![Install Navidrome with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -32,13 +32,13 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Shipped version:** 0.47.5~ynh2
+**Shipped version:** 0.47.5~ynh3
 
 **Demo:** https://demo.navidrome.org/app/#/login
 
 ## Screenshots
 
-![](./doc/screenshots/ss-desktop-player.png)
+![Screenshot of Navidrome](./doc/screenshots/ss-desktop-player.png)
 
 ## Disclaimers / important information
 
@@ -56,21 +56,22 @@ You must activate *public site* if you want to connect a client player to Navidr
 
 ## Documentation and resources
 
-* Official app website: https://www.navidrome.org
-* Official admin documentation: https://www.navidrome.org/docs
-* Upstream app code repository: https://github.com/deluan/navidrome
-* YunoHost documentation for this app: https://yunohost.org/app_navidrome
-* Report a bug: https://github.com/YunoHost-Apps/navidrome_ynh/issues
+* Official app website: <https://www.navidrome.org>
+* Official admin documentation: <https://www.navidrome.org/docs>
+* Upstream app code repository: <https://github.com/deluan/navidrome>
+* YunoHost documentation for this app: <https://yunohost.org/app_navidrome>
+* Report a bug: <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 
 ## Developer info
 
 Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/navidrome_ynh/tree/testing).
 
 To try the testing branch, please proceed like that.
-```
+
+``` bash
 sudo yunohost app install https://github.com/YunoHost-Apps/navidrome_ynh/tree/testing --debug
 or
 sudo yunohost app upgrade navidrome -u https://github.com/YunoHost-Apps/navidrome_ynh/tree/testing --debug
 ```
 
-**More info regarding app packaging:** https://yunohost.org/packaging_apps
+**More info regarding app packaging:** <https://yunohost.org/packaging_apps>
