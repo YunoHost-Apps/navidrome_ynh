@@ -34,6 +34,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 
 **Shipped version:** 0.47.5~ynh3
 
+
 **Demo:** https://demo.navidrome.org/app/#/login
 
 ## Screenshots
