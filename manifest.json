@@ -13,7 +13,8 @@
         "website": "https://www.navidrome.org",
         "demo": "https://demo.navidrome.org/app/#/login",
         "admindoc": "https://www.navidrome.org/docs",
-        "code": "https://github.com/deluan/navidrome"
+        "code": "https://github.com/deluan/navidrome",
+        "cpe": "cpe:2.3:a:navidrome:navidrome"
     },
     "license": "GPL-3.0-only",
     "maintainer": {
