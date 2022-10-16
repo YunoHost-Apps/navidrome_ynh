@@ -123,6 +123,8 @@ ynh_multimedia_build_main_dir
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 config_path="/var/lib/$app"
+ynh_app_setting_set --app=$app --key=config_path --value=$config_path
+
 mkdir -p "$config_path"
 
 # Main config File
