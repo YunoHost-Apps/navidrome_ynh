@@ -21,6 +21,7 @@ path_url=$(ynh_app_setting_get --app=$app --key=path)
 language=$(ynh_app_setting_get --app=$app --key=language)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
+datadir=$(ynh_app_setting_get --app=$app --key=datadir)
 
 enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
 scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
@@ -68,6 +69,17 @@ if ynh_legacy_permissions_exists; then
 	ynh_legacy_permissions_delete_all
 
 	ynh_app_setting_delete --app=$app --key=is_public
+fi
+
+if [ -z "$datadir" ]; then
+	datadir=/home/yunohost.app/$app
+	ynh_app_setting_set --app=$app --key=datadir --value=$datadir
+
+	mkdir -p $datadir
+
+	chmod 750 "$datadir"
+	chmod -R o-rwx "$datadir"
+	chown -R $app:www-data "$datadir"
 fi
 
 if [ -z "$language" ]; then
@@ -145,15 +157,13 @@ ynh_add_nginx_config
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-# ynh_script_progression --message="Updating a configuration file..."
+ynh_script_progression --message="Updating a configuration file..."
 
-# config_path="/var/lib/$app"
+# Uncomment when there is new options added upstream
+ynh_add_config --template="../conf/navidrome.toml" --destination="$datadir/navidrome.toml"
 
-# # Uncomment when there is new options added upstream
-# ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
-
-# chmod 600 "$config_path/navidrome.toml"
-# chown -R $app:$app "$config_path"
+chmod 600 "$datadir/navidrome.toml"
+chown -R $app:$app "$datadir/navidrome.toml"
 
 #=================================================
 # SETUP SYSTEMD

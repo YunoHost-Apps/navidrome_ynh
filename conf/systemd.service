@@ -1,18 +1,18 @@
 [Unit]
 Description=Navidrome Music Server and Streamer compatible with Subsonic/Airsonic
 After=remote-fs.target network.target
-AssertPathExists=__CONFIG_PATH__
+AssertPathExists=__DATADIR__
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__CONFIG_PATH__/
-ExecStart=__FINALPATH__/__APP__ --configfile "__CONFIG_PATH__/navidrome.toml"
+ExecStart=__FINALPATH__/__APP__ --configfile "__DATADIR__/navidrome.toml"
 TimeoutStopSec=20
 KillMode=process
 Restart=on-failure
-ReadWritePaths=__CONFIG_PATH__
+ReadWritePaths=__DATADIR__
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these

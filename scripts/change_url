@@ -29,6 +29,7 @@ ynh_script_progression --message="Loading installation settings..." --weight=1
 # Needed for helper "ynh_add_nginx_config"
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
+datadir=$(ynh_app_setting_get --app=$app --key=datadir)
 
 enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
 scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
@@ -112,13 +113,11 @@ fi
 #=================================================
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
-config_path="/var/lib/$app"
 path_url="$new_path"
+ynh_add_config --template="../conf/navidrome.toml" --destination="$datadir/navidrome.toml"
 
-ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
-
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+chmod 600 "$datadir/navidrome.toml"
+chown -R $app:$app "$datadir/navidrome.toml"
 
 #=================================================
 # GENERIC FINALISATION
