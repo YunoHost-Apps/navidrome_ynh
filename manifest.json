@@ -6,21 +6,22 @@
         "en": "Modern Music Server and Streamer compatible with Subsonic/Airsonic",
         "fr": "Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic"
     },
-    "version": "0.47.5~ynh3",
+    "version": "0.48.0~ynh1",
     "url": "https://www.navidrome.org",
     "upstream": {
         "license": "GPL-3.0-only",
         "website": "https://www.navidrome.org",
         "demo": "https://demo.navidrome.org/app/#/login",
         "admindoc": "https://www.navidrome.org/docs",
-        "code": "https://github.com/deluan/navidrome"
+        "code": "https://github.com/deluan/navidrome",
+        "cpe": "cpe:2.3:a:navidrome:navidrome"
     },
     "license": "GPL-3.0-only",
     "maintainer": {
         "name": "eric_G"
     },
     "requirements": {
-        "yunohost": ">= 4.3.0"
+        "yunohost": ">= 11.0.9"
     },
     "multi_instance": false,
     "services": [
@@ -46,6 +47,16 @@
                     "fr": "Vous devez activer site public si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
                 },
                 "default": true
+            },
+                        {
+                "name": "language",
+                "type": "string",
+                "ask": {
+                    "en": "Choose the application language",
+                    "fr": "Choisissez la langue de l'application"
+                },
+                "choices": ["fr", "en"],
+                "default": "fr"
             }
         ]
     }

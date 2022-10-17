@@ -18,6 +18,7 @@ app=$YNH_APP_INSTANCE_NAME
 
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
+language=$(ynh_app_setting_get --app=$app --key=language)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
 
@@ -30,7 +31,6 @@ welcome_message=$(ynh_app_setting_get --app=$app --key=welcome_message)
 #=================================================
 # CHECK VERSION
 #=================================================
-ynh_script_progression --message="Checking version..."
 
 upgrade_type=$(ynh_check_app_version_changed)
 
@@ -68,6 +68,11 @@ if ynh_legacy_permissions_exists; then
 	ynh_legacy_permissions_delete_all
 
 	ynh_app_setting_delete --app=$app --key=is_public
+fi
+
+if [ -z "$language" ]; then
+	language="en"
+	ynh_app_setting_set --app=$app --key=language --value=$language
 fi
 
 if [ -z "$enable_animation" ]; then
@@ -140,15 +145,15 @@ ynh_add_nginx_config
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Updating a configuration file..."
+# ynh_script_progression --message="Updating a configuration file..."
 
 config_path="/var/lib/$app"
 
-# Uncomment when there is new options added upstream
-ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
+# # Uncomment when there is new options added upstream
+# ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+# chmod 600 "$config_path/navidrome.toml"
+# chown -R $app:$app "$config_path"
 
 #=================================================
 # SETUP SYSTEMD

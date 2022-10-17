@@ -93,3 +93,6 @@ EnableUserEditing = "true"
 
 # Enable Navidrome to connect to any external service
 EnableExternalServices = "true"
+
+# Set the language by default
+DefaultLanguage="__LANGUAGE__"
