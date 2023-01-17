@@ -5,15 +5,15 @@ It shall NOT be edited by hand.
 
 # Navidrome pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)  
 [![Installer Navidrome avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Navidrome rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Navidrome rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Navidrome un logiciel qui vous permet d'écouter votre propre musique numérique de la même manière que vous le feriez avec des services comme Spotify, Apple Music et autres. Il vous permet également de partager facilement votre musique et vos listes de lecture avec vos amis et votre famille.
 Navidrome indexe toute la musique numérique stockée sur votre disque dur et la rend disponible via un agréable lecteur Web et également en utilisant n'importe quel client mobile compatible Subsonic-API. Votre musique devient consultable et vous pouvez créer des listes de lecture, évaluer et « favori » vos morceaux, albums et artistes préférés 
@@ -35,9 +35,9 @@ Navidrome indexe toute la musique numérique stockée sur votre disque dur et la
 
 **Démo :** https://demo.navidrome.org/app/#/login
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Navidrome](./doc/screenshots/ss-desktop-player.png)
+![Capture d’écran de Navidrome](./doc/screenshots/ss-desktop-player.png)
 
 ## Avertissements / informations importantes
 
@@ -55,9 +55,9 @@ Vous devez activer *site public* si vous souhaitez connecter un lecteur client �
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://www.navidrome.org>
-* Documentation officielle de l'admin : <https://www.navidrome.org/docs>
-* Dépôt de code officiel de l'app : <https://github.com/deluan/navidrome>
+* Site officiel de l’app : <https://www.navidrome.org>
+* Documentation officielle de l’admin : <https://www.navidrome.org/docs>
+* Dépôt de code officiel de l’app : <https://github.com/deluan/navidrome>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_navidrome>
 * Signaler un bug : <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 
@@ -73,4 +73,4 @@ ou
 sudo yunohost app upgrade navidrome -u https://github.com/YunoHost-Apps/navidrome_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
