@@ -101,3 +101,7 @@ DefaultLanguage="__LANGUAGE__"
 # If SSOWat didn't authenticate a user, manual login will still work (eg. for API)
 ReverseProxyUserHeader = "remote-user"
 ReverseProxyWhitelist = "0.0.0.0/0"
+
+# Disable the activity panel that can hang some browsers with >100% CPU usage
+# See https://github.com/navidrome/navidrome/issues/1511
+DevActivityPanel=false
