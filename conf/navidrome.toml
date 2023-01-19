@@ -96,3 +96,7 @@ EnableExternalServices = "true"
 
 # Set the language by default
 DefaultLanguage="__LANGUAGE__"
+
+# Disable the activity panel that can hang some browsers with >100% CPU usage
+# See https://github.com/navidrome/navidrome/issues/1511
+DevActivityPanel=false
