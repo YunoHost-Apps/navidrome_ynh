@@ -23,6 +23,14 @@ services = ["__APP__"]
         help = "Enable the option in the UI to download music/albums/artists/playlists from the server"
         bind = "EnableDownloads:/var/lib/navidrome/navidrome.toml"
 
+        [main.config.enable_sharing]
+        ask = "Enable Sharing feature"
+        type = "boolean"
+        yes = "true"
+        no = "false"
+        help = "Enable the Sharing feature"
+        bind = "EnableSharing:/var/lib/navidrome/navidrome.toml"
+
         [main.config.scanner_extractor]
         ask = "Select metadata extractor"
         type = "select"

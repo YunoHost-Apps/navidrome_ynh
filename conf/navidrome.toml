@@ -100,3 +100,6 @@ DefaultLanguage="__LANGUAGE__"
 # Disable the activity panel that can hang some browsers with >100% CPU usage
 # See https://github.com/navidrome/navidrome/issues/1511
 DevActivityPanel=false
+
+# Enable the Sharing feature
+EnableSharing=__ENABLE_SHARING__

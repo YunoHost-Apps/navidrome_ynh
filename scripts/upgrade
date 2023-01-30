@@ -27,6 +27,7 @@ scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
 enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
 enable_transcoding=$(ynh_app_setting_get --app=$app --key=enable_transcoding)
 welcome_message=$(ynh_app_setting_get --app=$app --key=welcome_message)
+enable_sharing=$(ynh_app_setting_get --app=$app --key=enable_sharing)
 
 #=================================================
 # CHECK VERSION
@@ -100,6 +101,11 @@ if [ -z "$welcome_message" ]; then
 	ynh_app_setting_set --app=$app --key=welcome_message --value=$welcome_message
 fi
 
+if [ -z "$enable_sharing" ]; then
+	enable_sharing="false"
+	ynh_app_setting_set --app=$app --key=enable_sharing --value=$enable_sharing
+fi
+
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
@@ -149,11 +155,11 @@ ynh_add_nginx_config
 
 config_path="/var/lib/$app"
 
-# # Uncomment when there is new options added upstream
-# ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
+# Uncomment when there is new options added upstream
+ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
-# chmod 600 "$config_path/navidrome.toml"
-# chown -R $app:$app "$config_path"
+chmod 600 "$config_path/navidrome.toml"
+chown -R $app:$app "$config_path"
 
 #=================================================
 # SETUP SYSTEMD
