@@ -1,5 +1,5 @@
 [Unit]
-Description=Navidrome Music Server and Streamer compatible with Subsonic/Airsonic
+Description=Navidrome: music Server and Streamer
 After=remote-fs.target network.target
 AssertPathExists=__CONFIG_PATH__
 
