@@ -41,6 +41,10 @@ ynh_script_progression --message="Setting up source files..." --weight=4
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir" --source_id=$YNH_ARCH
 
+chmod 750 "$install_dir"
+chmod -R o-rwx "$install_dir"
+chown -R $app:www-data "$install_dir"
+
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
@@ -63,16 +67,11 @@ ynh_multimedia_build_main_dir
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-config_path="/var/lib/$app"
-ynh_app_setting_set --app=$app --key=config_path --value=$config_path
-
-mkdir -p "$config_path"
-
 # Main config File
-ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
+ynh_add_config --template="../conf/navidrome.toml" --destination="$data_dir/navidrome.toml"
 
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+chmod 600 "$data_dir/navidrome.toml"
+chown -R $app:$app "$data_dir"
 
 #=================================================
 # SETUP SYSTEMD
@@ -98,14 +97,6 @@ ynh_script_progression --message="Starting a systemd service..." --weight=2
 
 # Start a systemd service
 ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
-
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions to app files
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
 
 #=================================================
 # END OF SCRIPT

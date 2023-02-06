@@ -39,16 +39,6 @@ ynh_script_progression --message="Removing NGINX web server configuration..." --
 ynh_remove_nginx_config
 
 #=================================================
-# SPECIFIC REMOVE
-#=================================================
-# REMOVE VARIOUS FILES
-#=================================================
-ynh_script_progression --message="Removing various files..." --weight=6
-
-# Remove the config directory securely
-ynh_secure_remove --file="/var/lib/$app"
-
-#=================================================
 # END OF SCRIPT
 #=================================================
 
