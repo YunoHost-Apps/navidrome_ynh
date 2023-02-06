@@ -36,8 +36,8 @@ ram.runtime = "50M"
     default = "/navidrome"
 
     [install.init_main_permission]
-    help.en = "You must activate public site if you want to connect a client player to Navidrome. This can be changed later via the webadmin."
-    help.fr = "Vous devez activer site public si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
+    help.en = "You must activate visitors permission if you want to connect a client player to Navidrome. This can be changed later via the webadmin."
+    help.fr = "Vous devez activer la permission visitors si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
     type = "group"
     default = "visitors"
 
