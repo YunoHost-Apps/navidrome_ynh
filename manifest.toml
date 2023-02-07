@@ -15,7 +15,6 @@ website = "https://www.navidrome.org"
 demo = "https://demo.navidrome.org/app/#/login"
 admindoc = "https://www.navidrome.org/docs"
 code = "https://github.com/deluan/navidrome"
-cpe = "cpe:2.3:a:navidrome:navidrome"
 
 [integration]
 yunohost = ">= 11.1.5"
@@ -36,8 +35,8 @@ ram.runtime = "50M"
     default = "/navidrome"
 
     [install.init_main_permission]
-    help.en = "You must activate visitors permission if you want to connect a client player to Navidrome. This can be changed later via the webadmin."
-    help.fr = "Vous devez activer la permission visitors si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
+    help.en = "You must activate 'visitors' permissions if you want to connect a client player to Navidrome. This can be changed later via the webadmin."
+    help.fr = "Vous devez activer la permission 'visitors' si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
     type = "group"
     default = "visitors"
 
@@ -45,15 +44,13 @@ ram.runtime = "50M"
     ask.en = "Choose the application language"
     ask.fr = "Choisissez la langue de l'application"
     type = "string"
-    choices = ["de", "en", "es", "fr", "it", "nl", "pt"]
+    choices = ["de", "en", "es", "fr", "it", "nl", "pt" ]
     default = "fr"
 
 [resources]
     [resources.system_user]
 
     [resources.install_dir]
-
-    [resources.data_dir]
 
     [resources.permissions]
     main.url = "/"
