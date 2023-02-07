@@ -17,8 +17,8 @@ admindoc = "https://www.navidrome.org/docs"
 code = "https://github.com/deluan/navidrome"
 
 [integration]
-yunohost = ">= 11.1.5"
-architectures = ["amd64", "arm64", "armhf" ]
+yunohost = ">= 11.1.6"
+architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
 ldap = false
 sso = true
