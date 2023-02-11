@@ -153,13 +153,13 @@ ynh_add_nginx_config
 #=================================================
 # ynh_script_progression --message="Updating a configuration file..."
 
-config_path="/var/lib/$app"
+#config_path="/var/lib/$app"
 
 # Uncomment when there is new options added upstream
-ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
+y#nh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
 
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+#chmod 600 "$config_path/navidrome.toml"
+#chown -R $app:$app "$config_path"
 
 #=================================================
 # SETUP SYSTEMD
