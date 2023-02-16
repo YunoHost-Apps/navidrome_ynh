@@ -12,43 +12,20 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-#REMOVEME? ynh_script_progression --message="Loading installation settings..." --weight=2
+ynh_script_progression --message="Loading installation settings..." --weight=2
 
-#REMOVEME? app=$YNH_APP_INSTANCE_NAME
-
-#REMOVEME? domain=$(ynh_app_setting_get --app=$app --key=domain)
-#REMOVEME? path=$(ynh_app_setting_get --app=$app --key=path)
-#REMOVEME? language=$(ynh_app_setting_get --app=$app --key=language)
-#REMOVEME? #REMOVEME? install_dir=$(ynh_app_setting_get --app=$app --key=install_dir)
-#REMOVEME? port=$(ynh_app_setting_get --app=$app --key=port)
-
-#REMOVEME? enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
-#REMOVEME? scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
-#REMOVEME? enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
-#REMOVEME? enable_transcoding=$(ynh_app_setting_get --app=$app --key=enable_transcoding)
-#REMOVEME? welcome_message=$(ynh_app_setting_get --app=$app --key=welcome_message)
-#REMOVEME? enable_sharing=$(ynh_app_setting_get --app=$app --key=enable_sharing)
+enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
+scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
+enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
+enable_transcoding=$(ynh_app_setting_get --app=$app --key=enable_transcoding)
+welcome_message=$(ynh_app_setting_get --app=$app --key=welcome_message)
+enable_sharing=$(ynh_app_setting_get --app=$app --key=enable_sharing)
 
 #=================================================
 # CHECK VERSION
 #=================================================
 
 upgrade_type=$(ynh_check_app_version_changed)
-
-#=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
-#=================================================
-#REMOVEME? ynh_script_progression --message="Backing up the app before upgrading (may take a while)..." --weight=4
-
-# Backup the current version of the app
-#REMOVEME? ynh_backup_before_upgrade
-#REMOVEME? ynh_clean_setup () {
-	ynh_clean_check_starting
-	# Restore it if the upgrade fails
-#REMOVEME? 	ynh_restore_upgradebackup
-}
-# Exit if an error occurs during the execution of the script
-#REMOVEME? ynh_abort_if_errors
 
 #=================================================
 # STANDARD UPGRADE STEPS
@@ -63,10 +40,6 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
-
-# Cleaning legacy permissions
-#REMOVEME? if ynh_legacy_permissions_exists; then
-#REMOVEME? 	ynh_legacy_permissions_delete_all
 
 	ynh_app_setting_delete --app=$app --key=is_public
 fi
@@ -107,14 +80,6 @@ if [ -z "$enable_sharing" ]; then
 fi
 
 #=================================================
-# CREATE DEDICATED USER
-#=================================================
-#REMOVEME? ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
-
-# Create a dedicated user (if not existing)
-#REMOVEME? ynh_system_user_create --username=$app --home_dir="$install_dir"
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -123,7 +88,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=5
 
 	# Remove the app directory securely
-#REMOVEME? 	ynh_secure_remove --file=$install_dir
+	ynh_secure_remove --file=$install_dir
 
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir="$install_dir" --source_id=$YNH_ARCH
@@ -132,13 +97,6 @@ fi
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
-
-#=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-#REMOVEME? ynh_script_progression --message="Upgrading dependencies..." --weight=8
-
-#REMOVEME? ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # NGINX CONFIGURATION
@@ -184,13 +142,6 @@ yunohost service add $app --description="Web-based music collection server and s
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
-
-#=================================================
-# RELOAD NGINX
-#=================================================
-#REMOVEME? ynh_script_progression --message="Reloading NGINX web server..." --weight=1
-
-#REMOVEME? ynh_systemd_action --service_name=nginx --action=reload
 
 #=================================================
 # END OF SCRIPT
