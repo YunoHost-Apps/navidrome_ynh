@@ -1,5 +1,5 @@
 # Load configurations from an external config file
-ConfigFile = "/var/lib/navidrome/navidrome.toml"
+ConfigFile = "/var/lib/__APP__/navidrome.toml"
  
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
@@ -11,7 +11,7 @@ Address = "127.0.0.1"
 Port = "__PORT__"
 
 # Base URL (only the path part) to configure Navidrome behind a proxy (ex: /music)
-BaseURL = "__PATH_URL__"
+BaseURL = "__PATH__"
 
 # Configure periodic scans using “cron” syntax. To disable it altogether, set it to "" (empty string)
 ScanSchedule = "@every 1m30s"

@@ -1,0 +1,61 @@
+packaging_format = 2
+
+id = "navidrome"
+name = "Navidrome"
+description.en = "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
+description.fr = "Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic"
+
+version = "0.49.3~ynh2"
+
+maintainers = ["eric_G"]
+
+[upstream]
+license = "GPL-3.0-only"
+website = "https://www.navidrome.org"
+demo = "https://demo.navidrome.org/app/#/login"
+admindoc = "https://www.navidrome.org/docs"
+code = "https://github.com/deluan/navidrome"
+
+[integration]
+yunohost = ">= 11.1.7"
+architectures = ["amd64", "arm64", "armhf"]
+multi_instance = false
+ldap = false
+sso = true
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/navidrome"
+
+    [install.init_main_permission]
+    help.en = "You must activate 'Visitors' if you want to connect a client player to Navidrome. This can be changed later via the webadmin."
+    help.fr = "Vous devez activer 'V'isiteurs' si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
+    type = "group"
+    default = "visitors"
+
+    [install.language]
+    ask.en = "Choose the application language"
+    ask.fr = "Choisissez la langue de l'application"
+    type = "string"
+    choices = ["de", "en", "es", "fr", "it", "nl", "pt"]
+    default = "fr"
+
+[resources]
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.ports]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "ffmpeg"

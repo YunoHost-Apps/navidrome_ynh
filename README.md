@@ -28,30 +28,17 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Multi-user, each user has their own play counts, playlists, favourites, etc...
 - Very low resource usage
 - Automatically monitors your library for changes, importing new files and reloading new metadata
-- Themeable, modern and responsive Web interface based on Material UI
 - Compatible with all Subsonic/Madsonic/Airsonic clients
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Shipped version:** 0.49.3~ynh1
+**Shipped version:** 0.49.3~ynh2
 
 **Demo:** https://demo.navidrome.org/app/#/login
 
 ## Screenshots
 
 ![Screenshot of Navidrome](./doc/screenshots/ss-desktop-player.png)
-
-## Disclaimers / important information
-
-#### Where are stored your music files
-
-Your music files are stored by default in your shared [multimedia folder](https://github.com/YunoHost-Apps/yunohost.multimedia) `/home/yunohost.multimedia/share/Music`. This folder is accessible from Nextcloud with *External Storages* enabled. This will allow you to easily upload your music files to the server.
-
-You can configure an alternative path to you music files by editing the path `MusicFolder = "/home/yunohost.multimedia/share/Music"` in this file `/var/lib/navidrome/navidrome.toml` using the [documentation](https://www.navidrome.org/docs/usage/configuration-options/). Remember to restart Navidrome service if you change your configuration file.
-
-#### Client player
-
-You must activate *public site* if you want to connect a client player to Navidrome.
 
 ## Documentation and resources
 

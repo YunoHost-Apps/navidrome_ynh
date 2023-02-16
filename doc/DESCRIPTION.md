@@ -10,6 +10,5 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Multi-user, each user has their own play counts, playlists, favourites, etc...
 - Very low resource usage
 - Automatically monitors your library for changes, importing new files and reloading new metadata
-- Themeable, modern and responsive Web interface based on Material UI
 - Compatible with all Subsonic/Madsonic/Airsonic clients
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
