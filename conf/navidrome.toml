@@ -40,6 +40,9 @@ UILoginBackgroundUrl = ""
 # Add a welcome message to the login screen
 UIWelcomeMessage = "__WELCOME_MESSAGE__"
 
+# Enable image pre-caching of new added music
+EnableArtworkPrecache = "true"
+
 # Controls whether the player in the UI will animate the album cover (rotation)
 EnableCoverAnimation = "__ENABLE_ANIMATION__"
 
@@ -108,3 +111,7 @@ EnableSharing="__ENABLE_SHARING__"
 # If SSOWat didn't authenticate a user, manual login will still work (eg. for API)
 ReverseProxyUserHeader = "remote-user"
 ReverseProxyWhitelist = "0.0.0.0/0"
+
+# Path to ffmpeg executable. Use it when Navidrome cannot find it, or you want to use a specific version
+FFmpegPath = ""
+
