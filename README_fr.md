@@ -28,7 +28,6 @@ Navidrome indexe toute la musique numérique stockée sur votre disque dur et la
 - Multi-User, chaque utilisateur a ses propres listes de lecture, favoris etc.
 - Utilisation très faible des ressources
 - Surveille automatiquement votre bibliothèque pour des modifications, importation de nouveaux fichiers et recharger de nouvelles métadonnées
-- Interface Web thématique, moderne et réactive basée sur l'interface utilisateur du matériel
 - Compatible avec tous les clients subsonique/madsononique/aironique
 - Encodage à la volée. Peut être défini par utilisateur/lecteur. Le codage opus est pris en charge 
 
