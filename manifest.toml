@@ -18,7 +18,7 @@ code = "https://github.com/deluan/navidrome"
 
 [integration]
 yunohost = ">= 11.1.7"
-architectures = ["amd64", "arm64", "armhf"]
+architectures = "all"
 multi_instance = false
 ldap = false
 sso = true

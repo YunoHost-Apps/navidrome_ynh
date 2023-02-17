@@ -1,6 +1,6 @@
 # Load configurations from an external config file
-ConfigFile = "/var/lib/__APP__/navidrome.toml"
- 
+ConfigFile = "__CONFIG_PATH__/navidrome.toml"
+
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
 

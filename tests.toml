@@ -2,12 +2,6 @@ test_format = 1.0
 
 [default]
 
-    # ------------
-    # Tests to run
-    # ------------
-
-    exclude ="install.multi"
-
     # -------------------------------
     # Commits to test upgrade from
     # -------------------------------
