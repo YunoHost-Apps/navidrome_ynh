@@ -1,0 +1,1 @@
+You must activate *public site* if you want to connect a client player to Navidrome.
