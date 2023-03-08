@@ -79,17 +79,21 @@ then
 	ynh_setup_source --dest_dir="$install_dir" --source_id=$YNH_ARCH
 fi
 
-chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
 
 #=================================================
-# NGINX CONFIGURATION
+# REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=2
+ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=5
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+yunohost service add $app --description="Web-based music collection server and streamer"
 
 #=================================================
 # UPDATE A CONFIG FILE
@@ -103,23 +107,6 @@ ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/n
 
 chmod 600 "$config_path/navidrome.toml"
 chown -R $app:$app "$config_path"
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Upgrading systemd configuration..." --weight=2
-
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..."
-
-yunohost service add $app --description="Web-based music collection server and streamer"
 
 #=================================================
 # START SYSTEMD SERVICE
