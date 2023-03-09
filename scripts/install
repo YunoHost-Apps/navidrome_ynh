@@ -75,7 +75,7 @@ mkdir -p "/var/lib/$app"
 ynh_add_config --template="../conf/navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
 
 chmod 600 "/var/lib/$app/navidrome.toml"
-chown -R $app:$app "$/var/lib/$app/navidrome.toml"
+chown -R $app:$app "/var/lib/$app/navidrome.toml"
 
 #=================================================
 # START SYSTEMD SERVICE
