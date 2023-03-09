@@ -17,8 +17,8 @@ admindoc = "https://www.navidrome.org/docs"
 code = "https://github.com/deluan/navidrome"
 
 [integration]
-yunohost = ">= 11.1.13"
-architectures = "all"
+yunohost = ">= 11.1.14"
+architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
 ldap = false
 sso = true
@@ -59,3 +59,13 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = "ffmpeg"
+
+[resources.sources]
+    [resources.sources.main]
+    amd64.url = "https://github.com/deluan/navidrome/releases/download/v0.49.3/navidrome_0.49.3_Linux_x86_64.tar.gz"
+    amd64.sha256 = "d7646878e34d7c79eab9345c8779637eeac9faf2147f6fda2f4b2d832a76308e"
+    arm64.url = "https://github.com/deluan/navidrome/releases/download/v0.49.3/navidrome_0.49.3_Linux_arm64.tar.gz"
+    arm64.sha256 = "1c7b31be311d441261fe148e7c8bb81273ac7bf1024388304a8929457eab87a6"
+    armhf.url = "https://github.com/deluan/navidrome/releases/download/v0.49.3/navidrome_0.49.3_Linux_armv7.tar.gz"
+    armhf.sha256 = "c8298754e7abd0461ca014bb939e2f34af1fd88b34e8d8329c50af321b8a155d"
+    in_subdir = false
