@@ -19,7 +19,6 @@ enable_animation="true"
 enable_transcoding="false"
 welcome_message=""
 enable_sharing="false"
-config_path="/var/lib/$app"
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -31,7 +30,6 @@ ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
 ynh_app_setting_set --app=$app --key=enable_transcoding --value=$enable_transcoding
 ynh_app_setting_set --app=$app --key=welcome_message --value=$welcome_message
 ynh_app_setting_set --app=$app --key=enable_sharing --value=$enable_sharing
-ynh_app_setting_set --app=$app --key=config_path --value=$config_path
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -71,13 +69,13 @@ ynh_multimedia_build_main_dir
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-mkdir -p "$config_path"
+mkdir -p "/var/lib/$app"
 
 # Main config File
-ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
+ynh_add_config --template="../conf/navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
 
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+chmod 600 "/var/lib/$app/navidrome.toml"
+chown -R $app:$app "$/var/lib/$app/navidrome.toml"
 
 #=================================================
 # START SYSTEMD SERVICE
