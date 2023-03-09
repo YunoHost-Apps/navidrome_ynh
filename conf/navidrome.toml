@@ -1,5 +1,5 @@
 # Load configurations from an external config file
-ConfigFile = "__CONFIG_PATH__/navidrome.toml"
+ConfigFile = "/var/lib/__APP__/navidrome.toml"
 
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
@@ -26,7 +26,7 @@ TranscodingCacheSize = "150MB"
 ImageCacheSize = "100MB"
 
 # Folder to store application data (DB, cache…)
-DataFolder = "__CONFIG_PATH__"
+DataFolder = "/var/lib/__APP__"
 
 # Folder where your music library is stored. Can be read-only
 MusicFolder = "/home/yunohost.multimedia/share/Music"
