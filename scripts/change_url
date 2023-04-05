@@ -10,17 +10,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# LOAD SETTINGS
-#=================================================
-
-#enable_downloads=$(ynh_app_setting_get --app=$app --key=enable_downloads)
-#scanner_extractor=$(ynh_app_setting_get --app=$app --key=scanner_extractor)
-#enable_animation=$(ynh_app_setting_get --app=$app --key=enable_animation)
-#enable_transcoding=$(ynh_app_setting_get --app=$app --key=enable_transcoding)
-#welcome_message=$(ynh_app_setting_get --app=$app --key=welcome_message)
-#enable_sharing=$(ynh_app_setting_get --app=$app --key=enable_sharing)
-
-#=================================================
 # STANDARD MODIFICATIONS
 #=================================================
 # STOP SYSTEMD SERVICE
