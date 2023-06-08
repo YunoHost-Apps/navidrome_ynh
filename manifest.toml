@@ -17,7 +17,7 @@ admindoc = "https://www.navidrome.org/docs"
 code = "https://github.com/deluan/navidrome"
 
 [integration]
-yunohost = ">= 11.1.7"
+yunohost = ">= 11.1.20"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
 ldap = false
@@ -36,7 +36,7 @@ ram.runtime = "50M"
 
     [install.init_main_permission]
     help.en = "You must activate 'Visitors' if you want to connect a client player to Navidrome. This can be changed later via the webadmin."
-    help.fr = "Vous devez activer 'V'isiteurs' si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
+    help.fr = "Vous devez activer 'Visiteurs' si vous souhaitez connecter un lecteur client à Navidrome. Vous pourrez changer ceci plus tard via la webadmin."
     type = "group"
     default = "visitors"
 
