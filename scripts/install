@@ -38,7 +38,7 @@ ynh_app_setting_set --app=$app --key=enable_sharing --value=$enable_sharing
 ynh_script_progression --message="Setting up source files..." --weight=4
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir" --source_id=$YNH_ARCH
+ynh_setup_source --dest_dir="$install_dir"
 
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
