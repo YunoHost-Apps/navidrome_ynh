@@ -40,7 +40,6 @@ ynh_script_progression --message="Setting up source files..." --weight=4
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
 
@@ -72,7 +71,7 @@ ynh_app_setting_set --app=$app --key=config_path --value=$config_path
 mkdir -p "$config_path"
 
 # Main config File
-ynh_add_config --template="../conf/navidrome.toml" --destination="$config_path/navidrome.toml"
+ynh_add_config --template="navidrome.toml" --destination="$config_path/navidrome.toml"
 
 chmod 600 "$config_path/navidrome.toml"
 chown -R $app:$app "$config_path"
