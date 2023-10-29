@@ -13,7 +13,7 @@ services = ["__APP__"]
         yes = "true"
         no = "false"
         help = "Controls whether the player in the UI will animate the album cover"
-        bind = "EnableCoverAnimation:__INSTALL_DIR__/navidrome.toml"
+        bind = "EnableCoverAnimation:__DATA_DIR__/navidrome.toml"
 
         [main.config.enable_downloads]
         ask = "Allow music download"
@@ -21,7 +21,7 @@ services = ["__APP__"]
         yes = "true"
         no = "false"
         help = "Enable the option in the UI to download music/albums/artists/playlists from the server"
-        bind = "EnableDownloads:__INSTALL_DIR__/navidrome.toml"
+        bind = "EnableDownloads:__DATA_DIR__/navidrome.toml"
 
         [main.config.enable_sharing]
         ask = "Enable Sharing feature"
@@ -29,7 +29,7 @@ services = ["__APP__"]
         yes = "true"
         no = "false"
         help = "Enable the Sharing feature"
-        bind = "EnableSharing:__INSTALL_DIR__/navidrome.toml"
+        bind = "EnableSharing:__DATA_DIR__/navidrome.toml"
 
         [main.config.scanner_extractor]
         ask = "Select metadata extractor"
@@ -37,7 +37,7 @@ services = ["__APP__"]
         choices = ["taglib", "ffmpeg"]
         default = "taglib"
         help = "Select metadata extractor implementation"
-        bind = "Scanner.Extractor:__INSTALL_DIR__/navidrome.toml"
+        bind = "Scanner.Extractor:__DATA_DIR__/navidrome.toml"
 
         [main.config.enable_transcoding]
         ask = "Enable transcoding"
@@ -45,10 +45,10 @@ services = ["__APP__"]
         yes = "true"
         no = "false"
         help = "Enables transcoding configuration in the UI"
-        bind = "EnableTranscodingConfig:__INSTALL_DIR__/navidrome.toml"
+        bind = "EnableTranscodingConfig:__DATA_DIR__/navidrome.toml"
 
         [main.config.welcome_message]
         ask = "Welcome message"
         type = "string"
         help = "Add a welcome message to the login screen"
-        bind = "UIWelcomeMessage:__INSTALL_DIR__/navidrome.toml"
+        bind = "UIWelcomeMessage:__DATA_DIR__/navidrome.toml"

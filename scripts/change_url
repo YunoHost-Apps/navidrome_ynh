@@ -30,13 +30,10 @@ ynh_change_url_nginx_config
 #=================================================
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
-config_path="/var/lib/$app"
-path_url="$new_path"
+ynh_add_config --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
 
-ynh_add_config --template="navidrome.toml" --destination="$config_path/navidrome.toml"
-
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+chmod 600 "$data_dir/navidrome.toml"
+chown -R $app:$app "$data_dir/navidrome.toml"
 
 #=================================================
 # GENERIC FINALISATION
