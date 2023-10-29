@@ -1,18 +1,17 @@
 [Unit]
 Description=Navidrome: Music Server and Streamer
 After=remote-fs.target network.target
-AssertPathExists=__CONFIG_PATH__
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__CONFIG_PATH__/
-ExecStart=__INSTALL_DIR__/__APP__ --configfile "__CONFIG_PATH__/navidrome.toml"
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/__APP__ --configfile "__INSTALL_DIR__/navidrome.toml"
 TimeoutStopSec=20
 KillMode=process
 Restart=on-failure
-ReadWritePaths=__CONFIG_PATH__
+ReadWritePaths=__INSTALL_DIR__/
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these

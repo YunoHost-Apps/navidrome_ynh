@@ -21,16 +21,6 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
 
 #=================================================
-# RESTORE VARIOUS FILES
-#=================================================
-ynh_script_progression --message="Restoring various files..." --weight=2
-
-ynh_restore_file --origin_path="/var/lib/$app"
-
-chmod 600 "/var/lib/$app/navidrome.toml"
-chown -R $app "/var/lib/$app"
-
-#=================================================
 # RESTORE SYSTEMD
 #=================================================
 ynh_script_progression --message="Restoring the systemd configuration..." --weight=5
