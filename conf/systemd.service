@@ -6,12 +6,12 @@ After=remote-fs.target network.target
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/__APP__ --configfile "__INSTALL_DIR__/navidrome.toml"
+WorkingDirectory=__DATA_DIR__/
+ExecStart=__INSTALL_DIR__/__APP__ --configfile "__DATA_DIR__/navidrome.toml"
 TimeoutStopSec=20
 KillMode=process
 Restart=on-failure
-ReadWritePaths=__INSTALL_DIR__/
+ReadWritePaths=__DATA_DIR__/
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
