@@ -19,6 +19,7 @@ enable_animation="true"
 enable_transcoding="false"
 welcome_message=""
 enable_sharing="false"
+config_path="/var/lib/$app"
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -31,6 +32,7 @@ ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
 ynh_app_setting_set --app=$app --key=enable_transcoding --value=$enable_transcoding
 ynh_app_setting_set --app=$app --key=welcome_message --value=$welcome_message
 ynh_app_setting_set --app=$app --key=enable_sharing --value=$enable_sharing
+ynh_app_setting_set --app=$app --key=config_path --value=$config_path
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -39,6 +41,8 @@ ynh_script_progression --message="Setting up source files..." --weight=4
 
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
+
+mkdir -p "$config_path"
 
 chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
@@ -69,11 +73,6 @@ ynh_multimedia_build_main_dir
 # ADD A CONFIGURATION
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-config_path="/var/lib/$app"
-ynh_app_setting_set --app=$app --key=config_path --value=$config_path
-
-mkdir -p "$config_path"
 
 # Main config File
 ynh_add_config --template="navidrome.toml" --destination="$config_path/navidrome.toml"
