@@ -44,7 +44,7 @@ Navidrome indexe toute la musique numérique stockée sur votre disque dur et la
 * Site officiel de l’app : <https://www.navidrome.org>
 * Documentation officielle de l’admin : <https://www.navidrome.org/docs>
 * Dépôt de code officiel de l’app : <https://github.com/deluan/navidrome>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_navidrome>
+* YunoHost Store: <https://apps.yunohost.org/app/navidrome>
 * Signaler un bug : <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 
 ## Informations pour les développeurs
