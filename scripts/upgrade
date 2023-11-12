@@ -83,9 +83,9 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
 
 #=================================================
-# NGINX CONFIGURATION
+# REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=2
+ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
@@ -98,15 +98,13 @@ yunohost service add $app --description="Web-based music collection server and s
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Updating a configuration file..."
-
-config_path="/var/lib/$app"
+ynh_script_progression --message="Updating a configuration file..." --weight=2
 
 # Uncomment when there is new options added upstream
-ynh_add_config --template="navidrome.toml" --destination="$config_path/navidrome.toml"
+ynh_add_config --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
 
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+chmod 600 "/var/lib/$app/navidrome.toml"
+chown -R $app:$app "/var/lib/$app"
 
 #=================================================
 # START SYSTEMD SERVICE

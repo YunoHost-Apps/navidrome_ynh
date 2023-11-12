@@ -28,7 +28,7 @@ ynh_script_progression --message="Restoring various files..." --weight=2
 ynh_restore_file --origin_path="/var/lib/$app"
 
 chmod 600 "/var/lib/$app/navidrome.toml"
-chown -R $app "/var/lib/$app"
+chown -R $app:$app "/var/lib/$app"
 
 #=================================================
 # RESTORE SYSTEMD
