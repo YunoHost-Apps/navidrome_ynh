@@ -113,5 +113,23 @@ ReverseProxyUserHeader = "remote-user"
 ReverseProxyWhitelist = "0.0.0.0/0"
 
 # Path to ffmpeg executable. Use it when Navidrome cannot find it, or you want to use a specific version
-FFmpegPath = ""
+FFmpegPath = "/usr/bin/ffmpeg"
 
+# Enable/Disable Jukebox mode
+#Jukebox.Enabled = true
+
+#MPVPath = "/path/to/mpv"
+
+# List of registered devices, syntax:
+#  "symbolic name " - Symbolic name to be used in UI's
+#  "device" - MPV audio device name, do mpv --audio-device=help to get a list
+
+#Jukebox.Devices = [
+#    # "symbolic name " "device"
+#    [ "internal",     "coreaudio/BuiltInSpeakerDevice" ],
+#    [ "dac",          "coreaudio/AppleUSBAudioEngine:Cambridge Audio :Cambridge Audio USB Audio 1.0:0000:1" ]
+#]
+
+# Device to use for Jukebox mode, if there are multiple entries above.
+# Using device "auto" if missing
+#Jukebox.Default = "dac"
