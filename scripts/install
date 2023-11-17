@@ -42,7 +42,7 @@ ynh_script_progression --message="Setting up source files..." --weight=4
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-mkdir -p "/var/lib/$app"
+mkdir -p "$config_path"
 
 chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
@@ -75,10 +75,10 @@ ynh_multimedia_build_main_dir
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 # Main config File
-ynh_add_config --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
+ynh_add_config --template="navidrome.toml" --destination="$config_path/navidrome.toml"
 
-chmod 600 "/var/lib/$app/navidrome.toml"
-chown -R $app:$app "/var/lib/$app/navidrome.toml"
+chmod 600 "$config_path/navidrome.toml"
+chown -R $app:$app "$config_path"
 
 #=================================================
 # START SYSTEMD SERVICE
