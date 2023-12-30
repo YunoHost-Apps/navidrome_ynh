@@ -6,9 +6,8 @@ You can configure an alternative path to you music files by editing the path `Mu
 
 #### Accessing Navidrome
 
-Navidrome uses its own password database and does not integrate with Yunohost LDAP, so there are two ways to access it:
+Navidrome uses its own password database and does not integrate with YunoHost LDAP, so there are two ways to access it:
 
-- When Navidrome is initially installed, before any users log in there is an option to create a Navidrome admin user by going directly to the access URL set for Navidrome in Yunohost. This admin account can create users who are able to log in via the same access URL.
-- The second method to access Navidrome is via Yunohost SSO, which is accomplished by logging in to Yunohost and then clicking on the Navidrome tile. With this method, the Navidrome password database is not populated with the Yunohost password which means future attempts to log in to Navidrome directly via the access URL will fail. This prevents alternative clients from logging in with the Yunohost user credentials, so in order to work around this issue, after logging in to Navidrome with SSO the user password can be manually set via the Navidrome interface. Any password will be accepted as the current password.
+- When Navidrome is initially installed, before any users log in there is an option to create a Navidrome admin user by going directly to the access URL set for Navidrome in YunoHost. This admin account can create users who are able to log in via the same access URL.
+- The second method to access Navidrome is via YunoHost SSO, which is accomplished by logging in to YunoHost and then clicking on the Navidrome tile. With this method, the Navidrome password database is not populated with the YunoHost password which means future attempts to log in to Navidrome directly via the access URL will fail. This prevents alternative clients from logging in with the YunoHost user credentials, so in order to work around this issue, after logging in to Navidrome with SSO the user password can be manually set via the Navidrome interface. Any password will be accepted as the current password.
 
-Further explanation of this can be found in [this github issue](https://github.com/YunoHost-Apps/navidrome_ynh/issues/101).
