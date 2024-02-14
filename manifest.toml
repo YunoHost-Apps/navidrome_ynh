@@ -7,7 +7,7 @@ description.fr = "Serveur de musique moderne et Streamer compatibles avec Subson
 
 version = "0.50.0~ynh2"
 
-maintainers = ["eric_G"]
+maintainers = []
 
 [upstream]
 license = "GPL-3.0-only"
