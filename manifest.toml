@@ -62,6 +62,11 @@ ram.runtime = "50M"
     armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.50.0/navidrome_0.50.0_linux_armv7.tar.gz"
     armhf.sha256 = "c93b8ec7f46cd717d4f7a0e5f5d4861e8f8342059379a77a2c1fc9d7c16c847e"
     in_subdir = false
+    
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "^navidrome_.*_linux_amd64.tar.gz$"
+    autoupdate.asset.arm64 = "^navidrome_.*_linux_arm64.tar.gz$"
+    autoupdate.asset.armhf = "^navidrome_.*_linux_armv7.tar.gz$"
 
     [resources.system_user]
 
