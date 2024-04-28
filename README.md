@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Navidrome with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install Navidrome quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -32,7 +32,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Shipped version:** 0.51.1~ynh1
+**Shipped version:** 0.52.0~ynh1
 
 **Demo:** <https://demo.navidrome.org/app/#/login>
 
