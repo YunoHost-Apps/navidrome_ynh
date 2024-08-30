@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 # Keep this path for calling _common.sh inside the execution's context of backup and restore scripts
 source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
@@ -13,19 +7,18 @@ source /usr/share/yunohost/helpers
 #=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Restoring the app main directory..." --weight=4
+ynh_script_progression "Restoring the app main directory..."
 
-ynh_restore_file --origin_path="$install_dir"
+ynh_restore "$install_dir"
 
-chmod -R o-rwx "$install_dir"
-chown -R $app:$app "$install_dir"
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:$app "$install_dir"
 #=================================================
 # RESTORE VARIOUS FILES
 #=================================================
-ynh_script_progression --message="Restoring various files..." --weight=2
+ynh_script_progression "Restoring various files..."
 
-ynh_restore_file --origin_path="/var/lib/$app"
+ynh_restore "/var/lib/$app"
 
 chmod 600 "/var/lib/$app/navidrome.toml"
 chown -R $app:$app "/var/lib/$app"
@@ -33,26 +26,26 @@ chown -R $app:$app "/var/lib/$app"
 #=================================================
 # RESTORE SYSTEMD
 #=================================================
-ynh_script_progression --message="Restoring the systemd configuration..." --weight=5
+ynh_script_progression "Restoring $app's systemd service..."
 
-ynh_restore_file --origin_path="/etc/systemd/system/$app.service"
+ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable $app.service --quiet
 
-ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
+ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 yunohost service add $app --description="Web-based music collection server and streamer" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
+ynh_systemctl --service=$app --action="start" --log_path=systemd --wait_until="Version:"
 
-ynh_systemd_action --service_name=nginx --action=reload
+ynh_systemctl --service=nginx --action=reload
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Restoration completed for $app" --last
+ynh_script_progression "Restoration completed for $app"

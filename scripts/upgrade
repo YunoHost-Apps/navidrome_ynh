@@ -1,95 +1,92 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=1
+ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemd_action --service_name=$app --action="stop" --log_path=systemd
+ynh_systemctl --service=$app --action="stop" --log_path=systemd
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
-ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+ynh_script_progression "Ensuring downward compatibility..."
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=language --value="en"
 if [ -z "${language:-}" ]; then
 	language="en"
-	ynh_app_setting_set --app=$app --key=language --value=$language
+	ynh_app_setting_set --key=language --value=$language
 fi
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=enable_animation --value="true"
 if [ -z "${enable_animation:-}" ]; then
 	enable_animation="true"
-	ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
+	ynh_app_setting_set --key=enable_animation --value=$enable_animation
 fi
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=enable_downloads --value="true"
 if [ -z "${enable_downloads:-}" ]; then
 	enable_downloads="true"
-	ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
+	ynh_app_setting_set --key=enable_downloads --value=$enable_downloads
 fi
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=scanner_extractor --value="taglib"
 if [ -z "${scanner_extractor:-}" ]; then
 	scanner_extractor="taglib"
-	ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
+	ynh_app_setting_set --key=scanner_extractor --value=$scanner_extractor
 fi
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=enable_transcoding --value="false"
 if [ -z "${enable_transcoding:-}" ]; then
 	enable_transcoding="false"
-	ynh_app_setting_set --app=$app --key=enable_transcoding --value=$enable_transcoding
+	ynh_app_setting_set --key=enable_transcoding --value=$enable_transcoding
 fi
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=welcome_message --value=""
 if [ -z "${welcome_message:-}" ]; then
 	welcome_message=""
-	ynh_app_setting_set --app=$app --key=welcome_message --value=$welcome_message
+	ynh_app_setting_set --key=welcome_message --value=$welcome_message
 fi
 
+# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=enable_sharing --value="false"
 if [ -z "${enable_sharing:-}" ]; then
 	enable_sharing="false"
-	ynh_app_setting_set --app=$app --key=enable_sharing --value=$enable_sharing
+	ynh_app_setting_set --key=enable_sharing --value=$enable_sharing
 fi
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Upgrading source files..." --weight=5
+ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir"  --full_replace=1
+ynh_setup_source --dest_dir="$install_dir"  --full_replace
 
-
-chmod -R o-rwx "$install_dir"
-chown -R $app:$app "$install_dir"
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:$app "$install_dir"
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
+ynh_script_progression "Upgrading system configurations related to $app..."
 
 # Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 # Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 
 yunohost service add $app --description="Web-based music collection server and streamer" --log="/var/log/$app/$app.log"
 
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-#ynh_script_progression --message="Updating a configuration file..." --weight=2
+#ynh_script_progression "Updating configuration..."
 
 # Uncomment when there is new options added upstream
-#ynh_add_config --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
+#ynh_config_add --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
 
 #chmod 600 "/var/lib/$app/navidrome.toml"
 #chown -R $app:$app "/var/lib/$app"
@@ -97,12 +94,12 @@ yunohost service add $app --description="Web-based music collection server and s
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
+ynh_systemctl --service=$app --action="start" --log_path=systemd --wait_until="Version:"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"
