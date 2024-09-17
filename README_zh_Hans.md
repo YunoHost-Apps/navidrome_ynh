@@ -5,7 +5,7 @@
 
 # YunoHost 上的 Navidrome
 
-[![集成程度](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![工作状态](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
 
 [![使用 YunoHost 安装 Navidrome](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
@@ -32,7 +32,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**分发版本：** 0.52.5~ynh1
+**分发版本：** 0.53.0~ynh1
 
 **演示：** <https://demo.navidrome.org/app/#/login>
 
