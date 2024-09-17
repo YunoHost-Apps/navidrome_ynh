@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Navidrome YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/navidrome.svg)](https://dash.yunohost.org/appci/app/navidrome) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
 
 [![Instalatu Navidrome YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
@@ -32,7 +32,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Paketatutako bertsioa:** 0.52.5~ynh1
+**Paketatutako bertsioa:** 0.53.0~ynh1
 
 **Demoa:** <https://demo.navidrome.org/app/#/login>
 
