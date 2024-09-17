@@ -133,3 +133,10 @@ FFmpegPath = "/usr/bin/ffmpeg"
 # Device to use for Jukebox mode, if there are multiple entries above.
 # Using device "auto" if missing
 #Jukebox.Default = "dac"
+
+
+# Base URL for shared links. Useful when your server address is not a public
+#ShareURL = 
+
+# Set imported playlists as public by default
+#DefaultPlaylistPublicVisibility = false
