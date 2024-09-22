@@ -32,7 +32,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**分发版本：** 0.53.1~ynh1
+**分发版本：** 0.53.2~ynh1
 
 **演示：** <https://demo.navidrome.org/app/#/login>
 
