@@ -1,16 +1,12 @@
 #!/bin/bash
 
 #=================================================
-# GENERIC STARTING
-#=================================================
 # IMPORT GENERIC HELPERS
 #=================================================
 
 source _common.sh
 source /usr/share/yunohost/helpers
 
-#=================================================
-# STANDARD MODIFICATIONS
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
@@ -38,13 +34,10 @@ chmod 600 "/var/lib/$app/navidrome.toml"
 chown -R $app:$app "/var/lib/$app/navidrome.toml"
 
 #=================================================
-# GENERIC FINALISATION
-#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-# Start a systemd service
 ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
 
 #=================================================
