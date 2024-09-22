@@ -134,7 +134,6 @@ FFmpegPath = "/usr/bin/ffmpeg"
 # Using device "auto" if missing
 #Jukebox.Default = "dac"
 
-
 # Base URL for shared links. Useful when your server address is not a public
 #ShareURL = 
 
