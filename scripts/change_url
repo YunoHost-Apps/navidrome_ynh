@@ -6,25 +6,25 @@ source /usr/share/yunohost/helpers
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=1
+ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
+ynh_systemctl --service=$app --action="stop" --log_path="systemd"
 
 #=================================================
 # MODIFY URL IN NGINX CONF
 #=================================================
-ynh_script_progression --message="Updating NGINX web server configuration..." --weight=1
+ynh_script_progression "Updating NGINX web server configuration..."
 
-ynh_change_url_nginx_config
+ynh_config_change_url_nginx
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Modifying a config file..." --weight=1
+ynh_script_progression "Updating configuration..."
 
 path_url="$new_path"
 
-ynh_add_config --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
+ynh_config_add --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
 
 chmod 600 "/var/lib/$app/navidrome.toml"
 chown -R $app:$app "/var/lib/$app/navidrome.toml"
@@ -32,12 +32,12 @@ chown -R $app:$app "/var/lib/$app/navidrome.toml"
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
+ynh_systemctl --service=$app --action="start" --log_path=systemd --wait_until="Version:"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Change of URL completed for $app" --last
+ynh_script_progression "Change of URL completed for $app"
