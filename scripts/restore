@@ -10,6 +10,9 @@ ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
 
+chmod -R o-rwx "$install_dir"
+chown -R $app:$app "$install_dir"
+
 #=================================================
 # RESTORE VARIOUS FILES
 #=================================================
