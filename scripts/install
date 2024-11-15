@@ -25,7 +25,6 @@ ynh_app_setting_set --key=enable_animation --value=$enable_animation
 ynh_app_setting_set --key=enable_transcoding --value=$enable_transcoding
 ynh_app_setting_set --key=welcome_message --value=$welcome_message
 ynh_app_setting_set --key=enable_sharing --value=$enable_sharing
-ynh_app_setting_set --key=config_path --value=$config_path
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
