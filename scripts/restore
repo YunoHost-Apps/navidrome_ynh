@@ -11,14 +11,11 @@ ynh_script_progression "Restoring the app main directory..."
 ynh_restore "$install_dir"
 
 #=================================================
-# RESTORE VARIOUS FILES
+# RESTORE THE DATA DIRECTORY
 #=================================================
-ynh_script_progression "Restoring various files..."
+ynh_script_progression "Restoring the data directory..."
 
-ynh_restore "/var/lib/$app"
-
-chmod 600 "/var/lib/$app/navidrome.toml"
-chown -R $app:$app "/var/lib/$app"
+ynh_restore "$data_dir"
 
 #=================================================
 # RESTORE SYSTEMD

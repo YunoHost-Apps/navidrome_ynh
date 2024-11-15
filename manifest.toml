@@ -71,6 +71,8 @@ ram.runtime = "50M"
 
     [resources.install_dir]
 
+    [resources.data_dir]
+    
     [resources.ports]
 
     [resources.permissions]

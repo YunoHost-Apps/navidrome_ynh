@@ -13,7 +13,6 @@ enable_animation="true"
 enable_transcoding="false"
 welcome_message=""
 enable_sharing="false"
-config_path="/var/lib/$app"
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -34,9 +33,6 @@ ynh_app_setting_set --key=config_path --value=$config_path
 ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
-
-mkdir -p "$config_path"
-chown -R $app:$app "$config_path"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -61,10 +57,9 @@ ynh_multimedia_build_main_dir
 #=================================================
 ynh_script_progression "Adding $app's configuration..."
 
-ynh_config_add --template="navidrome.toml" --destination="$config_path/navidrome.toml"
+ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
 
-chmod 600 "$config_path/navidrome.toml"
-chown -R $app:$app "$config_path"
+chmod 600 "$data_dir/navidrome.toml"
 
 #=================================================
 # START SYSTEMD SERVICE
