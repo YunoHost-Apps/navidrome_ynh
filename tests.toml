@@ -6,8 +6,8 @@ test_format = 1.0
     # Tests to run
     # ------------
 
-    exclude ="install.multi"
-
+    exclude = ["install.multi"]
+    
     # -------------------------------
     # Commits to test upgrade from
     # -------------------------------
