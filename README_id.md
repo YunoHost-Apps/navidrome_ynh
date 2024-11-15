@@ -32,7 +32,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Versi terkirim:** 0.53.2~ynh1
+**Versi terkirim:** 0.53.3~ynh1
 
 **Demo:** <https://demo.navidrome.org/app/#/login>
 
@@ -44,7 +44,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 
 - Website aplikasi resmi: <https://www.navidrome.org>
 - Dokumentasi admin resmi: <https://www.navidrome.org/docs>
-- Depot kode aplikasi hulu: <https://github.com/deluan/navidrome>
+- Depot kode aplikasi hulu: <https://github.com/navidrome/navidrome>
 - Gudang YunoHost: <https://apps.yunohost.org/app/navidrome>
 - Laporkan bug: <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 

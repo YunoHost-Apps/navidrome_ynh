@@ -32,7 +32,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Versión proporcionada:** 0.53.2~ynh1
+**Versión proporcionada:** 0.53.3~ynh1
 
 **Demo:** <https://demo.navidrome.org/app/#/login>
 
@@ -44,7 +44,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 
 - Web oficial da app: <https://www.navidrome.org>
 - Documentación oficial para admin: <https://www.navidrome.org/docs>
-- Repositorio de orixe do código: <https://github.com/deluan/navidrome>
+- Repositorio de orixe do código: <https://github.com/navidrome/navidrome>
 - Tenda YunoHost: <https://apps.yunohost.org/app/navidrome>
 - Informar dun problema: <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 
