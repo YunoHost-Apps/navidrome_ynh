@@ -1,54 +1,68 @@
 version = "1.0"
 
 [main]
-name = "Navidrome configuration"
+name.en = "Navidrome configuration"
+name.fr = "Configuration de Navidrome"
 services = ["__APP__"]
 
     [main.config]
-    name = "Configuration Options"
+    name.en = "Configuration Options"
+    name.fr = "Options de configuration"
 
         [main.config.enable_animation]
-        ask = "Enable cover animation"
+        ask.en = "Enable cover animation"
+        ask.fr = "Activer l'animation de couverture"
         type = "boolean"
         yes = "true"
         no = "false"
-        help = "Controls whether the player in the UI will animate the album cover"
+        help.en = "Controls whether the player in the UI will animate the album cover"
+        help.fr = "Contrôle si le lecteur dans l'interface utilisateur animera la couverture de l'album"
         bind = "EnableCoverAnimation:/var/lib/__APP__/navidrome.toml"
 
         [main.config.enable_downloads]
-        ask = "Allow music download"
+        ask.en = "Allow music download"
+        ask.fr = "Autoriser le téléchargement de musique"
         type = "boolean"
         yes = "true"
         no = "false"
-        help = "Enable the option in the UI to download music/albums/artists/playlists from the server"
+        help.en = "Enable the option in the UI to download music/albums/artists/playlists from the server"
+        help.fr = "Activer l'option dans l'interface utilisateur pour télécharger de la musique/albums/artistes/listes de lecture à partir du serveur"
         bind = "EnableDownloads:/var/lib/__APP__/navidrome.toml"
 
         [main.config.enable_sharing]
-        ask = "Enable Sharing feature"
+        ask.en = "Enable Sharing feature"
+        ask.fr = "Activer la fonctionnalité de partage"
         type = "boolean"
         yes = "true"
         no = "false"
-        help = "Enable the Sharing feature"
+        help.en = "Enable the Sharing feature"
+        help.fr = "Activer la fonctionnalité de partage"
         bind = "EnableSharing:/var/lib/__APP__/navidrome.toml"
 
         [main.config.scanner_extractor]
-        ask = "Select metadata extractor"
+        ask.en = "Select metadata extractor"
+        ask.fr = "Sélectionner l'extracteur de métadonnées"
         type = "select"
         choices = ["taglib", "ffmpeg"]
         default = "taglib"
-        help = "Select metadata extractor implementation"
+        help.en = "Select metadata extractor implementation"
+        help.fr = "Sélectionnez l'implémentation de l'extracteur de métadonnées"
         bind = "Scanner.Extractor:/var/lib/__APP__/navidrome.toml"
 
         [main.config.enable_transcoding]
-        ask = "Enable transcoding"
+        ask.en = "Enable transcoding"
+        ask.fr = "Activer le transcodage"
         type = "boolean"
         yes = "true"
         no = "false"
-        help = "Enables transcoding configuration in the UI"
+        help.en = "Enables transcoding configuration in the UI"
+        help.fr = "Active la configuration du transcodage dans l'interface utilisateur"
         bind = "EnableTranscodingConfig:/var/lib/__APP__/navidrome.toml"
 
         [main.config.welcome_message]
-        ask = "Welcome message"
+        ask.en = "Welcome message"
+        ask.fr = "Message de bienvenue"
         type = "string"
-        help = "Add a welcome message to the login screen"
+        help.en = "Add a welcome message to the login screen"
+        help.fr = "Ajouter un message de bienvenue à l'écran de connexion"
         bind = "UIWelcomeMessage:/var/lib/__APP__/navidrome.toml"

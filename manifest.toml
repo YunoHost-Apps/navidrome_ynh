@@ -17,12 +17,11 @@ admindoc = "https://www.navidrome.org/docs"
 code = "https://github.com/navidrome/navidrome"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.30"
+helpers_version = "2.1"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
-
 ldap = false
-
 sso = true
 
 disk = "50M"
