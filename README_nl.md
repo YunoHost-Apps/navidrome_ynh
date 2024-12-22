@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Navidrome voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/navidrome)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Navidrome met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 

@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Navidrome YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/navidrome)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Instalatu Navidrome YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 

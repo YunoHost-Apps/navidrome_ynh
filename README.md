@@ -5,7 +5,9 @@ It shall NOT be edited by hand.
 
 # Navidrome for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Working status](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Integration level](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Working status](https://apps.yunohost.org/badge/state/navidrome)
+![Maintenance status](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Install Navidrome with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 

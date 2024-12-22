@@ -5,7 +5,9 @@
 
 # Navidrome для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Состояние работы](https://apps.yunohost.org/badge/state/navidrome)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Установите Navidrome с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
