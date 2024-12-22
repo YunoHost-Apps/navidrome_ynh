@@ -26,7 +26,7 @@ TranscodingCacheSize = "150MB"
 ImageCacheSize = "100MB"
 
 # Folder to store application data (DB, cache…)
-DataFolder = "/var/lib/__APP__/"
+DataFolder = "__DATA_DIR__"
 
 # Folder where your music library is stored. Can be read-only
 MusicFolder = "/home/yunohost.multimedia/share/Music"
