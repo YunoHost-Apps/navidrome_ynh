@@ -23,6 +23,11 @@ ynh_app_setting_set_default --key=enable_transcoding --value="false"
 ynh_app_setting_set_default --key=welcome_message --value=""
 ynh_app_setting_set_default --key=enable_sharing --value="false"
 
+if [ -f "$install_dir/var/lib/navidrome.toml" ]
+then
+    mv "$install_dir/var/lib/navidrome.toml" "$data_dir/navidrome.toml"
+fi
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
