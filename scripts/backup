@@ -12,14 +12,18 @@ ynh_print_info "Declaring files to be backed up..."
 ynh_backup "$install_dir"
 
 #=================================================
+# BACKUP THE DATA DIR
+#=================================================
+
+ynh_backup "$data_dir"
+
+#=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 
 ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_backup "/etc/systemd/system/$app.service"
-
-ynh_backup "/var/lib/$app"
 
 #=================================================
 # END OF SCRIPT
