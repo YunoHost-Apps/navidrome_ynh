@@ -25,6 +25,13 @@ chmod 600 "/var/lib/$app/navidrome.toml"
 chown -R $app:$app "/var/lib/$app"
 
 #=================================================
+# YUNOHOST MULTIMEDIA INTEGRATION
+#=================================================
+ynh_script_progression "Adding multimedia directories..."
+
+ynh_multimedia_build_main_dir
+
+#=================================================
 # RESTORE SYSTEMD
 #=================================================
 ynh_script_progression "Restoring $app's systemd service..."
