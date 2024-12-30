@@ -34,6 +34,7 @@ ynh_app_setting_set --key=config_path --value=$config_path
 ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
+chmod +x "$install_dir/navidrome"
 
 mkdir -p "$config_path"
 chown -R $app:$app "$config_path"
