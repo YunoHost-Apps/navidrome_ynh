@@ -5,7 +5,9 @@ It shall NOT be edited by hand.
 
 # Navidrome for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Working status](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Integration level](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Working status](https://apps.yunohost.org/badge/state/navidrome)
+![Maintenance status](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Install Navidrome with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
@@ -32,7 +34,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Shipped version:** 0.53.2~ynh1
+**Shipped version:** 0.54.3~ynh1
 
 **Demo:** <https://demo.navidrome.org/app/#/login>
 
@@ -44,7 +46,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 
 - Official app website: <https://www.navidrome.org>
 - Official admin documentation: <https://www.navidrome.org/docs>
-- Upstream app code repository: <https://github.com/deluan/navidrome>
+- Upstream app code repository: <https://github.com/navidrome/navidrome>
 - YunoHost Store: <https://apps.yunohost.org/app/navidrome>
 - Report a bug: <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 

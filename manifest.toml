@@ -5,7 +5,7 @@ name = "Navidrome"
 description.en = "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
 description.fr = "Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic"
 
-version = "0.53.2~ynh1"
+version = "0.54.3~ynh1"
 
 maintainers = []
 
@@ -14,15 +14,15 @@ license = "GPL-3.0-only"
 website = "https://www.navidrome.org"
 demo = "https://demo.navidrome.org/app/#/login"
 admindoc = "https://www.navidrome.org/docs"
-code = "https://github.com/deluan/navidrome"
+code = "https://github.com/navidrome/navidrome"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
 
 ldap = false
-
 sso = true
 
 disk = "50M"
@@ -55,12 +55,12 @@ ram.runtime = "50M"
 [resources.sources]
 
     [resources.sources.main]
-    amd64.url = "https://github.com/navidrome/navidrome/releases/download/v0.53.2/navidrome_0.53.2_linux_amd64.tar.gz"
-    amd64.sha256 = "3e50a8329abf4bbfcabb97978064146d83a81eb2f56b83e386d03b8331151167"
-    arm64.url = "https://github.com/navidrome/navidrome/releases/download/v0.53.2/navidrome_0.53.2_linux_arm64.tar.gz"
-    arm64.sha256 = "ec2443decfdfe4888c20e29d10435056645edcec61374b2a360db1f2c07d5415"
-    armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.53.2/navidrome_0.53.2_linux_armv7.tar.gz"
-    armhf.sha256 = "f1a1fe7081293778cf111f73c148e8fa63aec5ca0432ef1446f783fd3bf8cc4e"
+    amd64.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.3/navidrome_0.54.3_linux_amd64.tar.gz"
+    amd64.sha256 = "395d2ee24680d9dd599c7dc7f75dda28819aa9e4a20850c61c496b739ebe3a4a"
+    arm64.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.3/navidrome_0.54.3_linux_arm64.tar.gz"
+    arm64.sha256 = "938139502494e3b6535895cbee924c8dabd2f126192c25e31ba2ab018d5bbea4"
+    armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.3/navidrome_0.54.3_linux_armv7.tar.gz"
+    armhf.sha256 = "1712b518cb394f78e9f0e96c87676b2d3610789edbf1c4bffd29087b1e4eaa0f"
     in_subdir = false
     
     autoupdate.strategy = "latest_github_release"

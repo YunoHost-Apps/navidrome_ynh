@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -24,58 +18,51 @@ config_path="/var/lib/$app"
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
-ynh_script_progression --message="Storing installation settings..." --weight=2
+ynh_script_progression "Storing installation settings..."
 
-ynh_app_setting_set --app=$app --key=enable_downloads --value=$enable_downloads
-ynh_app_setting_set --app=$app --key=scanner_extractor --value=$scanner_extractor
-ynh_app_setting_set --app=$app --key=enable_animation --value=$enable_animation
-ynh_app_setting_set --app=$app --key=enable_transcoding --value=$enable_transcoding
-ynh_app_setting_set --app=$app --key=welcome_message --value=$welcome_message
-ynh_app_setting_set --app=$app --key=enable_sharing --value=$enable_sharing
-ynh_app_setting_set --app=$app --key=config_path --value=$config_path
+ynh_app_setting_set --key=enable_downloads --value=$enable_downloads
+ynh_app_setting_set --key=scanner_extractor --value=$scanner_extractor
+ynh_app_setting_set --key=enable_animation --value=$enable_animation
+ynh_app_setting_set --key=enable_transcoding --value=$enable_transcoding
+ynh_app_setting_set --key=welcome_message --value=$welcome_message
+ynh_app_setting_set --key=enable_sharing --value=$enable_sharing
+ynh_app_setting_set --key=config_path --value=$config_path
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=4
+ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
+chmod +x "$install_dir/navidrome"
 
 mkdir -p "$config_path"
-
-chmod -R o-rwx "$install_dir"
-chown -R $app:$app "$install_dir"
+chown -R $app:$app "$config_path"
 
 #=================================================
-# NGINX CONFIGURATION
+# SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring NGINX web server..." --weight=3
+ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
-# Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 
 yunohost service add $app --description="Web-based music collection server and streamer" --log="/var/log/$app/$app.log"
 
 #=================================================
-# SPECIFIC SETUP
-#=================================================
 # YUNOHOST MULTIMEDIA INTEGRATION
 #=================================================
-ynh_script_progression --message="Adding multimedia directories..." --weight=2
+ynh_script_progression "Adding multimedia directories..."
 
 ynh_multimedia_build_main_dir
 
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression "Adding $app's configuration..."
 
-# Main config File
-ynh_add_config --template="navidrome.toml" --destination="$config_path/navidrome.toml"
+ynh_config_add --template="navidrome.toml" --destination="$config_path/navidrome.toml"
 
 chmod 600 "$config_path/navidrome.toml"
 chown -R $app:$app "$config_path"
@@ -83,13 +70,12 @@ chown -R $app:$app "$config_path"
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=2
+ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Version:"
+ynh_systemctl --service=$app --action="start" --log_path=systemd --wait_until="Version:"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"

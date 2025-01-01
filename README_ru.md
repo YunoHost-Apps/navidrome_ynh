@@ -5,7 +5,9 @@
 
 # Navidrome для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Состояние работы](https://apps.yunohost.org/badge/state/navidrome)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Установите Navidrome с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
@@ -32,7 +34,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Поставляемая версия:** 0.53.2~ynh1
+**Поставляемая версия:** 0.54.3~ynh1
 
 **Демо-версия:** <https://demo.navidrome.org/app/#/login>
 
@@ -44,7 +46,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 
 - Официальный веб-сайт приложения: <https://www.navidrome.org>
 - Официальная документация администратора: <https://www.navidrome.org/docs>
-- Репозиторий кода главной ветки приложения: <https://github.com/deluan/navidrome>
+- Репозиторий кода главной ветки приложения: <https://github.com/navidrome/navidrome>
 - Магазин YunoHost: <https://apps.yunohost.org/app/navidrome>
 - Сообщите об ошибке: <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 

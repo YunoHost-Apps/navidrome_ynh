@@ -5,7 +5,9 @@ Il NE doit PAS être modifié à la main.
 
 # Navidrome pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Niveau d’intégration](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Statut du fonctionnement](https://apps.yunohost.org/badge/state/navidrome)
+![Statut de maintenance](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Installer Navidrome avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
@@ -31,7 +33,7 @@ Navidrome indexe toute la musique numérique stockée sur votre disque dur et la
 - Compatible avec tous les clients subsonique/madsononique/aironique
 - Encodage à la volée. Peut être défini par utilisateur/lecteur. Le codage opus est pris en charge 
 
-**Version incluse :** 0.53.2~ynh1
+**Version incluse :** 0.54.3~ynh1
 
 **Démo :** <https://demo.navidrome.org/app/#/login>
 
@@ -43,7 +45,7 @@ Navidrome indexe toute la musique numérique stockée sur votre disque dur et la
 
 - Site officiel de l’app : <https://www.navidrome.org>
 - Documentation officielle de l’admin : <https://www.navidrome.org/docs>
-- Dépôt de code officiel de l’app : <https://github.com/deluan/navidrome>
+- Dépôt de code officiel de l’app : <https://github.com/navidrome/navidrome>
 - YunoHost Store : <https://apps.yunohost.org/app/navidrome>
 - Signaler un bug : <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 

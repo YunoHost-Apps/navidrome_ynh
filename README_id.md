@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Navidrome untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/navidrome.svg)](https://ci-apps.yunohost.org/ci/apps/navidrome/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/navidrome.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/navidrome.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/navidrome)](https://ci-apps.yunohost.org/ci/apps/navidrome/)
+![Status kerja](https://apps.yunohost.org/badge/state/navidrome)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/navidrome)
 
 [![Pasang Navidrome dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=navidrome)
 
@@ -32,7 +34,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 - Transcoding on the fly. Can be set per user/player. Opus encoding is supported
 
 
-**Versi terkirim:** 0.53.2~ynh1
+**Versi terkirim:** 0.54.3~ynh1
 
 **Demo:** <https://demo.navidrome.org/app/#/login>
 
@@ -44,7 +46,7 @@ Navidrome indexes all digital music stored in your hard drive and makes it avail
 
 - Website aplikasi resmi: <https://www.navidrome.org>
 - Dokumentasi admin resmi: <https://www.navidrome.org/docs>
-- Depot kode aplikasi hulu: <https://github.com/deluan/navidrome>
+- Depot kode aplikasi hulu: <https://github.com/navidrome/navidrome>
 - Gudang YunoHost: <https://apps.yunohost.org/app/navidrome>
 - Laporkan bug: <https://github.com/YunoHost-Apps/navidrome_ynh/issues>
 
