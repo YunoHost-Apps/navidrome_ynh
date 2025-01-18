@@ -5,7 +5,7 @@ name = "Navidrome"
 description.en = "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
 description.fr = "Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic"
 
-version = "0.54.3~ynh1"
+version = "0.54.4~ynh1"
 
 maintainers = []
 
@@ -55,12 +55,12 @@ ram.runtime = "50M"
 [resources.sources]
 
     [resources.sources.main]
-    amd64.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.3/navidrome_0.54.3_linux_amd64.tar.gz"
-    amd64.sha256 = "395d2ee24680d9dd599c7dc7f75dda28819aa9e4a20850c61c496b739ebe3a4a"
-    arm64.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.3/navidrome_0.54.3_linux_arm64.tar.gz"
-    arm64.sha256 = "938139502494e3b6535895cbee924c8dabd2f126192c25e31ba2ab018d5bbea4"
-    armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.3/navidrome_0.54.3_linux_armv7.tar.gz"
-    armhf.sha256 = "1712b518cb394f78e9f0e96c87676b2d3610789edbf1c4bffd29087b1e4eaa0f"
+    amd64.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.4/navidrome_0.54.4_linux_amd64.tar.gz"
+    amd64.sha256 = "f5ab2a37b889ae2fe5443e05acfcf28e6a3103615ea68e5dc8a0f56a987928de"
+    arm64.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.4/navidrome_0.54.4_linux_arm64.tar.gz"
+    arm64.sha256 = "b55290c98c672e2b903aa5cd3da0e3d011293c3332c3501a453fe3d106604cdd"
+    armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.54.4/navidrome_0.54.4_linux_armv7.tar.gz"
+    armhf.sha256 = "156019d8d7b0fbb99b9eb96f30c6e1f7cdc0c3486398ba35b2ad455289303799"
     in_subdir = false
     
     autoupdate.strategy = "latest_github_release"
