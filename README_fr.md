@@ -33,7 +33,7 @@ Navidrome indexe toute la musique numérique stockée sur votre disque dur et la
 - Compatible avec tous les clients subsonique/madsononique/aironique
 - Encodage à la volée. Peut être défini par utilisateur/lecteur. Le codage opus est pris en charge 
 
-**Version incluse :** 0.54.4~ynh1
+**Version incluse :** 0.54.5~ynh1
 
 **Démo :** <https://demo.navidrome.org/app/#/login>
 
