@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -8,7 +12,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemctl --service=$app --action="stop" --log_path=systemd
+ynh_systemctl --service="$app" --action="stop" --log_path=systemd
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -28,19 +32,10 @@ ynh_app_setting_set_default --key=enable_sharing --value="false"
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
+
 chmod +x "$install_dir/navidrome"
-
-#=================================================
-# REAPPLY SYSTEM CONFIGURATIONS
-#=================================================
-ynh_script_progression "Upgrading system configurations related to $app..."
-
-ynh_config_add_nginx
-
-ynh_config_add_systemd
-
-yunohost service add $app --description="Web-based music collection server and streamer" --log="/var/log/$app/$app.log"
 
 #=================================================
 # UPDATE A CONFIG FILE
@@ -54,11 +49,21 @@ yunohost service add $app --description="Web-based music collection server and s
 #chown -R $app:$app "/var/lib/$app"
 
 #=================================================
+# REAPPLY SYSTEM CONFIGURATIONS
+#=================================================
+ynh_script_progression "Upgrading system configurations related to $app..."
+
+ynh_config_add_nginx
+
+ynh_config_add_systemd
+yunohost service add "$app" --description="Web-based music collection server and streamer" --log="/var/log/$app/$app.log"
+
+#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start" --log_path=systemd --wait_until="Version:"
+ynh_systemctl --service="$app" --action="start" --log_path=systemd --wait_until="Version:"
 
 #=================================================
 # END OF SCRIPT
