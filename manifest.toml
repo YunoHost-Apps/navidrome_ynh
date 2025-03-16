@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "navidrome"
@@ -23,6 +25,7 @@ architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
 
 ldap = false
+
 sso = true
 
 disk = "750M"
@@ -72,10 +75,10 @@ ram.runtime = "90M"
 
     [resources.install_dir]
 
-    [resources.ports]
-
     [resources.permissions]
     main.url = "/"
+
+    [resources.ports]
 
     [resources.apt]
     packages = "ffmpeg"
