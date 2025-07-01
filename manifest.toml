@@ -59,11 +59,11 @@ ram.runtime = "90M"
 
     [resources.sources.main]
     amd64.url = "https://github.com/navidrome/navidrome/releases/download/v0.57.0/navidrome_0.57.0_linux_amd64.tar.gz"
-    amd64.sha256 = "03474d4e29fe5dde87935191368e9004edc19f61cec7882a3bd4e1b8651e4d7d"
+    amd64.sha256 = "cb0d49d4f7a723a57907fa0eb9c5c2140eebd459bff501ea09553b9df0d94a6c"
     arm64.url = "https://github.com/navidrome/navidrome/releases/download/v0.57.0/navidrome_0.57.0_linux_arm64.tar.gz"
-    arm64.sha256 = "3f71708d125dfd6a71e9d0312c6137d792de42f44720b9fbe78cc79f9a08fed3"
+    arm64.sha256 = "712217bd560546a5ff717295398bf0b84eec3294fd891a8809a0a129b0f78f52"
     armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.57.0/navidrome_0.57.0_linux_armv7.tar.gz"
-    armhf.sha256 = "e271a6cdfca84ce340b0edd3e82264041f42ff650f84000634738285671c558b"
+    armhf.sha256 = "30048d0c11a49702d5369b84cd4091766969b6058fcd1117c23f9bfcc3779979"
     in_subdir = false
     
     autoupdate.strategy = "latest_github_release"
