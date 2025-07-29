@@ -27,8 +27,6 @@ ynh_config_change_url_nginx
 #=================================================
 ynh_script_progression "Updating configuration..."
 
-path_url="$new_path"
-
 ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
 
 chmod 600 "$data_dir/navidrome.toml"
