@@ -27,6 +27,11 @@ ynh_app_setting_set_default --key=enable_transcoding --value="false"
 ynh_app_setting_set_default --key=welcome_message --value=""
 ynh_app_setting_set_default --key=enable_sharing --value="false"
 
+if ynh_compare_current_package_version --comparison lt --version "0.58.0~ynh1"; then
+    ynh_script_progression "Moving data to the new location '$data_dir'..."
+    mv /var/lib/$app/* $data_dir/
+fi
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
