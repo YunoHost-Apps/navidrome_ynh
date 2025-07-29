@@ -15,9 +15,14 @@ ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
 
-#chmod -R o-rwx "$install_dir"
 chmod +x "$install_dir/navidrome"
-chown -R $app:$app "$install_dir"
+
+#=================================================
+# RESTORE THE DATA DIRECTORY
+#=================================================
+ynh_script_progression "Restoring the data directory..."
+
+ynh_restore "$data_dir"
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATIONS
@@ -28,18 +33,8 @@ ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable "$app.service" --quiet
+
 yunohost service add "$app" --description="Web-based music collection server and streamer" --log="/var/log/$app/$app.log"
-
-#=================================================
-# RESTORE VARIOUS FILES
-#=================================================
-ynh_script_progression "Restoring various files..."
-
-ynh_restore "/var/lib/$app"
-
-chown -R $app:$app "/var/lib/$app"
-chmod -R u+rwX "/var/lib/$app"
-chmod 600 "/var/lib/$app/navidrome.toml"
 
 #=================================================
 # YUNOHOST MULTIMEDIA INTEGRATION
