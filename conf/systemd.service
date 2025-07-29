@@ -1,7 +1,6 @@
 [Unit]
 Description=Navidrome: Music Server and Streamer
 After=remote-fs.target network.target
-AssertPathExists=/var/lib/__APP__
 
 [Service]
 Type=simple
