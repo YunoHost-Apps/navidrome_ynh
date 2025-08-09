@@ -14,7 +14,7 @@ Port = "__PORT__"
 BaseURL = "__PATH__"
 
 # Configure periodic scans using “cron” syntax. To disable it altogether, set it to "" (empty string)
-ScanSchedule = "@every 1m30s"
+Scanner.Schedule = "@every 1m30s"
 
 # Enables transcoding configuration in the UI
 EnableTranscodingConfig = "__ENABLE_TRANSCODING__"
