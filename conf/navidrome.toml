@@ -1,5 +1,5 @@
 # Load configurations from an external config file
-ConfigFile = "/var/lib/__APP__/navidrome.toml"
+ConfigFile = "__DATA_DIR__/navidrome.toml"
  
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
@@ -14,7 +14,7 @@ Port = "__PORT__"
 BaseURL = "__PATH__"
 
 # Configure periodic scans using “cron” syntax. To disable it altogether, set it to "" (empty string)
-Scanner.Schedule = "@every 1m30s"
+Scanner.Schedule = "@every 10m"
 
 # Enables transcoding configuration in the UI
 EnableTranscodingConfig = "__ENABLE_TRANSCODING__"
@@ -26,7 +26,7 @@ TranscodingCacheSize = "150MB"
 ImageCacheSize = "100MB"
 
 # Folder to store application data (DB, cache…)
-DataFolder = "/var/lib/__APP__/"
+DataFolder = "__DATA_DIR__"
 
 # Folder where your music library is stored. Can be read-only
 MusicFolder = "/home/yunohost.multimedia/share/Music"
@@ -110,7 +110,7 @@ EnableSharing="__ENABLE_SHARING__"
 # Enable SSOWat authentication for all IP addresses
 # If SSOWat didn't authenticate a user, manual login will still work (eg. for API)
 ReverseProxyUserHeader = "remote-user"
-ReverseProxyWhitelist = "0.0.0.0/0"
+ReverseProxyWhitelist = "127.0.0.1/0"
 
 # Path to ffmpeg executable. Use it when Navidrome cannot find it, or you want to use a specific version
 FFmpegPath = "/usr/bin/ffmpeg"
