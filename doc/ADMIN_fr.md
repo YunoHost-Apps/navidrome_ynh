@@ -4,7 +4,7 @@ Votre musique est a stockée par default dans le [dossier multimédia](https://g
 
 Vous pouvez personnaliser le dossier de stockage de vos fichiers de musique en éditant le fichier de configuration `__DATA_DIR__/navidrome.toml` et rediriger la variable `MusicFolder = "/home/yunohost.multimedia/share/Music"`. Vous pouvez également changer d'autre réglage en vous aidant de la [documentation](https://www.navidrome.org/docs/usage/configuration-options/). Pensez à redémarrer le service de Navidrome si vous modifiez votre fichier de configuration. 
 
-#### Accessing Navidrome
+#### Accéder à Navidrome
 
 Navidrome uses its own password database and does not integrate with YunoHost LDAP, so there are two ways to access it:
 
