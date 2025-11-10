@@ -4,7 +4,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -27,6 +26,12 @@ ynh_app_setting_set_default --key=enable_transcoding --value="false"
 ynh_app_setting_set_default --key=welcome_message --value=""
 ynh_app_setting_set_default --key=enable_sharing --value="false"
 
+if ynh_app_upgrading_from_version_before 0.58.0~ynh1
+then
+    ynh_script_progression "Moving data to the new location '$data_dir'..."
+    mv /var/lib/$app/* $data_dir/
+fi
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -38,15 +43,13 @@ ynh_setup_source --dest_dir="$install_dir"
 chmod +x "$install_dir/navidrome"
 
 #=================================================
-# UPDATE A CONFIG FILE
+# APP INITIAL CONFIGURATION
 #=================================================
-#ynh_script_progression "Updating configuration..."
+ynh_script_progression "Adding $app's configuration files..."
 
-# Uncomment when there is new options added upstream
-#ynh_config_add --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
+ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
 
-#chmod 600 "/var/lib/$app/navidrome.toml"
-#chown -R $app:$app "/var/lib/$app"
+chmod 600 "$data_dir/navidrome.toml"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
@@ -56,7 +59,8 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 ynh_config_add_nginx
 
 ynh_config_add_systemd
-yunohost service add "$app" --description="Web-based music collection server and streamer" --log="/var/log/$app/$app.log"
+
+yunohost service add "$app" --description="Music collection server and streamer" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE

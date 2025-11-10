@@ -4,7 +4,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -27,12 +26,9 @@ ynh_config_change_url_nginx
 #=================================================
 ynh_script_progression "Updating configuration..."
 
-path_url="$new_path"
+ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
 
-ynh_config_add --template="navidrome.toml" --destination="/var/lib/$app/navidrome.toml"
-
-chmod 600 "/var/lib/$app/navidrome.toml"
-chown -R $app:$app "/var/lib/$app/navidrome.toml"
+chmod 600 "$data_dir/navidrome.toml"
 
 #=================================================
 # START SYSTEMD SERVICE

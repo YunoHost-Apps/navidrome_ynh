@@ -7,7 +7,7 @@ name = "Navidrome"
 description.en = "Modern Music Server and Streamer compatible with Subsonic/Airsonic"
 description.fr = "Serveur de musique moderne et Streamer compatibles avec Subsonic/Airsonic"
 
-version = "0.58.0~ynh2"
+version = "0.58.5~ynh1"
 
 maintainers = []
 
@@ -19,7 +19,7 @@ admindoc = "https://www.navidrome.org/docs"
 code = "https://github.com/navidrome/navidrome"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
@@ -57,12 +57,12 @@ ram.runtime = "90M"
 [resources.sources]
 
     [resources.sources.main]
-    amd64.url = "https://github.com/navidrome/navidrome/releases/download/v0.58.0/navidrome_0.58.0_linux_amd64.tar.gz"
-    amd64.sha256 = "a9bfbad658e47f2bb141e31d51487d2331b52d80ac30de430623224a956a0337"
-    arm64.url = "https://github.com/navidrome/navidrome/releases/download/v0.58.0/navidrome_0.58.0_linux_arm64.tar.gz"
-    arm64.sha256 = "d75216c3ec8e5b24dc910effcbda623aac9a574da32d107d6e0ef7cdb4677080"
-    armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.58.0/navidrome_0.58.0_linux_armv7.tar.gz"
-    armhf.sha256 = "13319191d20aa12ff2a1dcfdad8acf28a789dc9688c239fcb8dcbbcf60d0ad08"
+    amd64.url = "https://github.com/navidrome/navidrome/releases/download/v0.58.5/navidrome_0.58.5_linux_amd64.tar.gz"
+    amd64.sha256 = "5e72431a007ff9e4a5334084d05d51665ee06afb2fcef01230ee5df5e1454497"
+    arm64.url = "https://github.com/navidrome/navidrome/releases/download/v0.58.5/navidrome_0.58.5_linux_arm64.tar.gz"
+    arm64.sha256 = "eec1364e40372d86a73c90246a58fad753d85af429f75d429ca940b6835da44c"
+    armhf.url = "https://github.com/navidrome/navidrome/releases/download/v0.58.5/navidrome_0.58.5_linux_armv7.tar.gz"
+    armhf.sha256 = "b5448323be6c564da86a88b5cb599651546a02c5183ee83a1f6b92cc5a372e46"
     in_subdir = false
     
     autoupdate.strategy = "latest_github_release"
@@ -73,6 +73,8 @@ ram.runtime = "90M"
     [resources.system_user]
 
     [resources.install_dir]
+
+    [resources.data_dir]
 
     [resources.permissions]
     main.url = "/"

@@ -17,7 +17,7 @@ services = ["__APP__"]
         no = "false"
         help.en = "Controls whether the player in the UI will animate the album cover"
         help.fr = "Contrôle si le lecteur dans l'interface utilisateur animera la couverture de l'album"
-        bind = "EnableCoverAnimation:/var/lib/__APP__/navidrome.toml"
+        bind = "EnableCoverAnimation:__DATA_DIR__/navidrome.toml"
 
         [main.config.enable_downloads]
         ask.en = "Allow music download"
@@ -27,7 +27,7 @@ services = ["__APP__"]
         no = "false"
         help.en = "Enable the option in the UI to download music/albums/artists/playlists from the server"
         help.fr = "Activer l'option dans l'interface utilisateur pour télécharger de la musique/albums/artistes/listes de lecture à partir du serveur"
-        bind = "EnableDownloads:/var/lib/__APP__/navidrome.toml"
+        bind = "EnableDownloads:__DATA_DIR__/navidrome.toml"
 
         [main.config.enable_sharing]
         ask.en = "Enable Sharing feature"
@@ -37,7 +37,7 @@ services = ["__APP__"]
         no = "false"
         help.en = "Enable the Sharing feature"
         help.fr = "Activer la fonctionnalité de partage"
-        bind = "EnableSharing:/var/lib/__APP__/navidrome.toml"
+        bind = "EnableSharing:__DATA_DIR__/navidrome.toml"
 
         [main.config.scanner_extractor]
         ask.en = "Select metadata extractor"
@@ -47,7 +47,7 @@ services = ["__APP__"]
         default = "taglib"
         help.en = "Select metadata extractor implementation"
         help.fr = "Sélectionnez l'implémentation de l'extracteur de métadonnées"
-        bind = "Scanner.Extractor:/var/lib/__APP__/navidrome.toml"
+        bind = "Scanner.Extractor:__DATA_DIR__/navidrome.toml"
 
         [main.config.enable_transcoding]
         ask.en = "Enable transcoding"
@@ -57,7 +57,7 @@ services = ["__APP__"]
         no = "false"
         help.en = "Enables transcoding configuration in the UI"
         help.fr = "Active la configuration du transcodage dans l'interface utilisateur"
-        bind = "EnableTranscodingConfig:/var/lib/__APP__/navidrome.toml"
+        bind = "EnableTranscodingConfig:__DATA_DIR__/navidrome.toml"
 
         [main.config.welcome_message]
         ask.en = "Welcome message"
@@ -65,4 +65,4 @@ services = ["__APP__"]
         type = "string"
         help.en = "Add a welcome message to the login screen"
         help.fr = "Ajouter un message de bienvenue à l'écran de connexion"
-        bind = "UIWelcomeMessage:/var/lib/__APP__/navidrome.toml"
+        bind = "UIWelcomeMessage:__DATA_DIR__/navidrome.toml"

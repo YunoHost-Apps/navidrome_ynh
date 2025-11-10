@@ -1,1 +1,1 @@
-Vous devez activer à l'installation *visiteurs* si vous souhaitez connecter un joueur client à Navidrome.
+Vous devez activer à l'installation *visiteurs* si vous souhaitez connecter un client à Navidrome.

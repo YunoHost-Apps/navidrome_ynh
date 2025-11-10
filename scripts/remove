@@ -4,7 +4,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -19,8 +18,6 @@ fi
 ynh_config_remove_systemd
 
 ynh_config_remove_nginx
-
-ynh_safe_rm "/var/lib/$app"
 
 #=================================================
 # END OF SCRIPT
