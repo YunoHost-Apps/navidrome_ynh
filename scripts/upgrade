@@ -30,6 +30,9 @@ if ynh_app_upgrading_from_version_before 0.58.0~ynh1
 then
     ynh_script_progression "Moving data to the new location '$data_dir'..."
     mv /var/lib/$app/* $data_dir/
+    ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
+
+    chmod 600 "$data_dir/navidrome.toml"
 fi
 
 #=================================================
@@ -45,11 +48,11 @@ chmod +x "$install_dir/navidrome"
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
-ynh_script_progression "Adding $app's configuration files..."
+#ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
+#ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
 
-chmod 600 "$data_dir/navidrome.toml"
+#chmod 600 "$data_dir/navidrome.toml"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
