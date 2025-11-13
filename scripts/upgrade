@@ -33,6 +33,9 @@ then
     
     ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
     chmod 600 "$data_dir/navidrome.toml"
+elif [ -f /var/lib/$app/navidrome.db ]; then
+    ynh_script_progression "Moving database to the new location '$data_dir'..."
+    mv -f /var/lib/$app/navidrome.{db,db-wal,db-shm} $data_dir || true
 fi
 
 #=================================================
