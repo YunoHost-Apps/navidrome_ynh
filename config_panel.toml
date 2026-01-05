@@ -35,8 +35,6 @@ services = ["__APP__"]
         type = "boolean"
         yes = "true"
         no = "false"
-        help.en = "Enable the Sharing feature"
-        help.fr = "Activer la fonctionnalité de partage"
         bind = "EnableSharing:__DATA_DIR__/navidrome.toml"
 
         [main.config.scanner_extractor]
@@ -45,8 +43,6 @@ services = ["__APP__"]
         type = "select"
         choices = ["taglib", "ffmpeg"]
         default = "taglib"
-        help.en = "Select metadata extractor implementation"
-        help.fr = "Sélectionnez l'implémentation de l'extracteur de métadonnées"
         bind = "Scanner.Extractor:__DATA_DIR__/navidrome.toml"
 
         [main.config.enable_transcoding]
