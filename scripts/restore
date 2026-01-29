@@ -13,8 +13,6 @@ ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
 
-chmod +x "$install_dir/navidrome"
-
 #=================================================
 # RESTORE THE DATA DIRECTORY
 #=================================================
@@ -46,7 +44,7 @@ ynh_multimedia_build_main_dir
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path=systemd
+ynh_systemctl --service="$app" --action="start"
 
 ynh_systemctl --service=nginx --action=reload
 
