@@ -98,14 +98,14 @@ EnableUserEditing = "true"
 EnableExternalServices = "true"
 
 # Set the language by default
-DefaultLanguage="__LANGUAGE__"
+DefaultLanguage = "__LANGUAGE__"
 
 # Disable the activity panel that can hang some browsers with >100% CPU usage
 # See https://github.com/navidrome/navidrome/issues/1511
-DevActivityPanel=false
+DevActivityPanel = false
 
 # Enable the Sharing feature
-EnableSharing="__ENABLE_SHARING__"
+EnableSharing = "__ENABLE_SHARING__"
 
 # Enable SSOWat authentication for all IP addresses
 # If SSOWat didn't authenticate a user, manual login will still work (eg. for API)
@@ -141,31 +141,31 @@ FFmpegPath = "/usr/bin/ffmpeg"
 #DefaultPlaylistPublicVisibility = false
 
 # Enable/disable the plugin system
-Plugins.Enabled=true
+Plugins.Enabled = true
 
 # Path to the plugins directory. Default: $DataFolder/Plugins
-Plugins.Folder=""
+Plugins.Folder="__DATA_DIR__/Plugins"
 
 # Maximum cache size for storing compiled plugin WASM modules
-Plugins.CacheSiz="200MB"
+Plugins.CacheSiz = "200MB"
 
 # Automatically detect new/changed/removed plugins
-Plugins.AutoReload=false
+Plugins.AutoReload = false
 
 # Override log level for plugin-related messages
-Plugins.LogLevel=""
+Plugins.LogLevel = ""
 
-#Comma-separated list of clients that receive reduced API responses (useful for resource-constrained devices like smartwatches)
-Subsonic.MinimalClients=""
+# Comma-separated list of clients that receive reduced API responses (useful for resource-constrained devices like smartwatches)
+Subsonic.MinimalClients = ""
 
 # Include average rating in API responses
-Subsonic.EnableAverageRating=true
+Subsonic.EnableAverageRating = true
 
-#Minimum similarity score (0-100) for matching similar songs from external sources to local library
-SimilarSongsMatchThreshold=85
+# Minimum similarity score (0-100) for matching similar songs from external sources to local library
+SimilarSongsMatchThreshold = 85
 
 # Now supports comma-separated list of languages (e.g., "de,fr,en") for metadata fallback
-LastFM.Language="fr,en"
+LastFM.Language = "fr,en"
 
 # Now supports comma-separated list of languages for metadata fallback
-Deezer.Language="fr,en"
+Deezer.Language = "fr,en"
