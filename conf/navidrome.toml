@@ -139,3 +139,33 @@ FFmpegPath = "/usr/bin/ffmpeg"
 
 # Set imported playlists as public by default
 #DefaultPlaylistPublicVisibility = false
+
+# Enable/disable the plugin system
+Plugins.Enabled=true
+
+# Path to the plugins directory. Default: $DataFolder/Plugins
+Plugins.Folder=""
+
+# Maximum cache size for storing compiled plugin WASM modules
+Plugins.CacheSiz="200MB"
+
+# Automatically detect new/changed/removed plugins
+Plugins.AutoReload=false
+
+# Override log level for plugin-related messages
+Plugins.LogLevel=""
+
+#Comma-separated list of clients that receive reduced API responses (useful for resource-constrained devices like smartwatches)
+Subsonic.MinimalClients=""
+
+# Include average rating in API responses
+Subsonic.EnableAverageRating=true
+
+#Minimum similarity score (0-100) for matching similar songs from external sources to local library
+SimilarSongsMatchThreshold=85
+
+# Now supports comma-separated list of languages (e.g., "de,fr,en") for metadata fallback
+LastFM.Language="fr,en"
+
+# Now supports comma-separated list of languages for metadata fallback
+Deezer.Language="fr,en"

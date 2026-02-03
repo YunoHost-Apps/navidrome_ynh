@@ -10,7 +10,7 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-scanner_extractor="taglib"
+scanner_extractor="go-taglib"
 enable_downloads="true"
 enable_animation="true"
 enable_transcoding="false"

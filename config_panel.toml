@@ -41,7 +41,7 @@ services = ["__APP__"]
         ask.en = "Select metadata extractor"
         ask.fr = "Sélectionner l'extracteur de métadonnées"
         type = "select"
-        choices = ["taglib", "ffmpeg"]
+        choices = ["taglib", "ffmpeg", "go-taglib"]
         default = "taglib"
         bind = "Scanner.Extractor:__DATA_DIR__/navidrome.toml"
 
