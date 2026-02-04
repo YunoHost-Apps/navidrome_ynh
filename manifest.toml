@@ -17,6 +17,7 @@ website = "https://www.navidrome.org"
 demo = "https://demo.navidrome.org/app/#/login"
 admindoc = "https://www.navidrome.org/docs"
 code = "https://github.com/navidrome/navidrome"
+fund = "https://ko-fi.com/deluan"
 
 [integration]
 yunohost = ">= 12.1.38"
