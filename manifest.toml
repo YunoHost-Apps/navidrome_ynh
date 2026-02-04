@@ -27,9 +27,9 @@ multi_instance = false
 ldap = false
 sso = true
 
-disk = "750M"
+disk = "150M"
 ram.build = "50M"
-ram.runtime = "90M"
+ram.runtime = "110M"
 
 [install]
     [install.domain]
