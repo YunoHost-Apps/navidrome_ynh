@@ -67,6 +67,9 @@ AutoImportPlaylists = "true"
 # The default metadata extractor is still ffmpeg but you can use the new taglib extractor
 Scanner.Extractor = "__SCANNER_EXTRACTOR__"
 
+# Comma-separated list of metadata agents to use for retrieving artist information, biographies, and images. Available agents: lastfm, spotify, and deezer. The order determines priority - agents are tried in the specified order until one succeeds. Only enabled and configured agents will be used.
+Agents = "deezer,spotify,lastfm"
+
 # Last.FM ApiKey
 LastFM.ApiKey = ""
 
