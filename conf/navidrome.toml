@@ -100,6 +100,9 @@ EnableFavourites = "true"
 # Enable 5-star ratings in the UI
 EnableStarRating = "true"
 
+# 	Enables transcoding cancellation when a client disconnects during streaming. When enabled, transcoding processes are stopped if the client closes the connection, saving server resources. Useful for preventing unnecessary transcoding work when users skip or stop playback
+EnableTranscodingCancellation = "false"
+
 # Enable regular users to edit their details and change their password
 EnableUserEditing = "true"
 
@@ -119,7 +122,7 @@ EnableSharing = "__ENABLE_SHARING__"
 # Enable SSOWat authentication for all IP addresses
 # If SSOWat didn't authenticate a user, manual login will still work (eg. for API)
 ExtAuth.UserHeader = "remote-user"
-ReverseProxyWhitelist = "127.0.0.1/0"
+ExtAuth.TrustedSources = "127.0.0.1/0"
 
 # Path to ffmpeg executable. Use it when Navidrome cannot find it, or you want to use a specific version
 FFmpegPath = "/usr/bin/ffmpeg"
