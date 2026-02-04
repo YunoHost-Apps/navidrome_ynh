@@ -1,5 +1,5 @@
 # Load configurations from an external config file
-ConfigFile = "__DATA_DIR__/navidrome.toml"
+#ConfigFile = "__DATA_DIR__/navidrome.toml"
  
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
