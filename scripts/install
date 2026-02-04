@@ -10,7 +10,7 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-scanner_extractor="taglib"
+#scanner_extractor="taglib"
 enable_downloads="true"
 enable_animation="true"
 enable_transcoding="false"
@@ -18,7 +18,7 @@ welcome_message=""
 enable_sharing="false"
 
 ynh_app_setting_set --key=enable_downloads --value=$enable_downloads
-ynh_app_setting_set --key=scanner_extractor --value=$scanner_extractor
+#ynh_app_setting_set --key=scanner_extractor --value=$scanner_extractor
 ynh_app_setting_set --key=enable_animation --value=$enable_animation
 ynh_app_setting_set --key=enable_transcoding --value=$enable_transcoding
 ynh_app_setting_set --key=welcome_message --value=$welcome_message
