@@ -121,9 +121,6 @@ EnableSharing = "__ENABLE_SHARING__"
 ExtAuth.UserHeader = "remote-user"
 ReverseProxyWhitelist = "127.0.0.1/0"
 
-
-
-
 # Path to ffmpeg executable. Use it when Navidrome cannot find it, or you want to use a specific version
 FFmpegPath = "/usr/bin/ffmpeg"
 
