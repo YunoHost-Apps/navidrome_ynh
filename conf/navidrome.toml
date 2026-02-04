@@ -1,5 +1,5 @@
 # Load configurations from an external config file
-#ConfigFile = "__DATA_DIR__/navidrome.toml"
+ConfigFile = "__DATA_DIR__/navidrome.toml"
  
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace
 LogLevel = "INFO"
@@ -73,8 +73,8 @@ LastFM.ApiKey = ""
 # Last.FM Shared Secret
 LastFM.Secret = ""
 
-# Two letter-code for language to be used to retrieve biographies from Last.FM
-LastFM.Language = "en"
+# Now supports comma-separated list of languages (e.g., "de,fr,en") for metadata fallback
+LastFM.Language = "fr,en"
 
 # Spotify Client ID
 Spotify.ID = ""
@@ -163,9 +163,6 @@ Subsonic.EnableAverageRating = true
 
 # Minimum similarity score (0-100) for matching similar songs from external sources to local library
 SimilarSongsMatchThreshold = 85
-
-# Now supports comma-separated list of languages (e.g., "de,fr,en") for metadata fallback
-LastFM.Language = "fr,en"
 
 # Now supports comma-separated list of languages for metadata fallback
 Deezer.Language = "fr,en"
