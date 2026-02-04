@@ -82,6 +82,12 @@ Spotify.ID = ""
 # Spotify Client Secret
 Spotify.Secret = ""
 
+#Set this to false to completely disable Deezer integration for artist images
+Deezer.Enabled = "true"
+
+# Now supports comma-separated list of languages for metadata fallback
+Deezer.Language = "fr,en"
+
 # Use Gravatar images as the user profile image. Needs the user’s email to be filled 
 EnableGravatar = "false"
 
@@ -150,7 +156,7 @@ Plugins.Folder="__DATA_DIR__/Plugins"
 Plugins.CacheSiz = "200MB"
 
 # Automatically detect new/changed/removed plugins
-Plugins.AutoReload = false
+Plugins.AutoReload = "false"
 
 # Override log level for plugin-related messages
 Plugins.LogLevel = ""
@@ -159,10 +165,7 @@ Plugins.LogLevel = ""
 Subsonic.MinimalClients = ""
 
 # Include average rating in API responses
-Subsonic.EnableAverageRating = true
+Subsonic.EnableAverageRating = "true"
 
 # Minimum similarity score (0-100) for matching similar songs from external sources to local library
 SimilarSongsMatchThreshold = 85
-
-# Now supports comma-separated list of languages for metadata fallback
-Deezer.Language = "fr,en"
