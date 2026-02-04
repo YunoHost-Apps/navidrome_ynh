@@ -11,7 +11,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="stop" --log_path=systemd
+ynh_systemctl --service="$app" --action="stop"
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -21,7 +21,7 @@ ynh_script_progression "Ensuring downward compatibility..."
 ynh_app_setting_set_default --key=language --value="en"
 ynh_app_setting_set_default --key=enable_animation --value="true"
 ynh_app_setting_set_default --key=enable_downloads --value="true"
-ynh_app_setting_set_default --key=scanner_extractor --value="taglib"
+#ynh_app_setting_set_default --key=scanner_extractor --value="taglib"
 ynh_app_setting_set_default --key=enable_transcoding --value="false"
 ynh_app_setting_set_default --key=welcome_message --value=""
 ynh_app_setting_set_default --key=enable_sharing --value="false"
@@ -73,7 +73,7 @@ yunohost service add "$app" --description="Music collection server and streamer"
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path=systemd #--wait_until="Version:"
+ynh_systemctl --service="$app" --action="start"
 
 #=================================================
 # END OF SCRIPT

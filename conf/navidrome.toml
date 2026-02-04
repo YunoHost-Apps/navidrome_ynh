@@ -65,7 +65,10 @@ IgnoredArticles = "The El La Los Las Le Les Os As O A"
 AutoImportPlaylists = "true"
 
 # The default metadata extractor is still ffmpeg but you can use the new taglib extractor
-Scanner.Extractor = "__SCANNER_EXTRACTOR__"
+#Scanner.Extractor = "legacy-taglib"
+
+# Comma-separated list of metadata agents to use for retrieving artist information, biographies, and images. Available agents: lastfm, spotify, and deezer. The order determines priority - agents are tried in the specified order until one succeeds. Only enabled and configured agents will be used.
+Agents = "deezer,spotify,lastfm"
 
 # Last.FM ApiKey
 LastFM.ApiKey = ""
@@ -73,14 +76,20 @@ LastFM.ApiKey = ""
 # Last.FM Shared Secret
 LastFM.Secret = ""
 
-# Two letter-code for language to be used to retrieve biographies from Last.FM
-LastFM.Language = "en"
+# Now supports comma-separated list of languages (e.g., "de,fr,en") for metadata fallback
+LastFM.Language = "fr,en"
 
 # Spotify Client ID
 Spotify.ID = ""
 
 # Spotify Client Secret
 Spotify.Secret = ""
+
+#Set this to false to completely disable Deezer integration for artist images
+Deezer.Enabled = "true"
+
+# Now supports comma-separated list of languages for metadata fallback
+Deezer.Language = "fr,en"
 
 # Use Gravatar images as the user profile image. Needs the user’s email to be filled 
 EnableGravatar = "false"
@@ -91,6 +100,9 @@ EnableFavourites = "true"
 # Enable 5-star ratings in the UI
 EnableStarRating = "true"
 
+# 	Enables transcoding cancellation when a client disconnects during streaming. When enabled, transcoding processes are stopped if the client closes the connection, saving server resources. Useful for preventing unnecessary transcoding work when users skip or stop playback
+EnableTranscodingCancellation = "false"
+
 # Enable regular users to edit their details and change their password
 EnableUserEditing = "true"
 
@@ -98,19 +110,19 @@ EnableUserEditing = "true"
 EnableExternalServices = "true"
 
 # Set the language by default
-DefaultLanguage="__LANGUAGE__"
+DefaultLanguage = "__LANGUAGE__"
 
 # Disable the activity panel that can hang some browsers with >100% CPU usage
 # See https://github.com/navidrome/navidrome/issues/1511
-DevActivityPanel=false
+DevActivityPanel = false
 
 # Enable the Sharing feature
-EnableSharing="__ENABLE_SHARING__"
+EnableSharing = "__ENABLE_SHARING__"
 
 # Enable SSOWat authentication for all IP addresses
 # If SSOWat didn't authenticate a user, manual login will still work (eg. for API)
-ReverseProxyUserHeader = "remote-user"
-ReverseProxyWhitelist = "127.0.0.1/0"
+ExtAuth.UserHeader = "remote-user"
+ExtAuth.TrustedSources = "127.0.0.1/0"
 
 # Path to ffmpeg executable. Use it when Navidrome cannot find it, or you want to use a specific version
 FFmpegPath = "/usr/bin/ffmpeg"
@@ -139,3 +151,27 @@ FFmpegPath = "/usr/bin/ffmpeg"
 
 # Set imported playlists as public by default
 #DefaultPlaylistPublicVisibility = false
+
+# Enable/disable the plugin system
+Plugins.Enabled = true
+
+# Path to the plugins directory. Default: $DataFolder/Plugins
+Plugins.Folder="__DATA_DIR__/Plugins"
+
+# Maximum cache size for storing compiled plugin WASM modules
+Plugins.CacheSiz = "200MB"
+
+# Automatically detect new/changed/removed plugins
+Plugins.AutoReload = "false"
+
+# Override log level for plugin-related messages
+Plugins.LogLevel = ""
+
+# Comma-separated list of clients that receive reduced API responses (useful for resource-constrained devices like smartwatches)
+Subsonic.MinimalClients = ""
+
+# Include average rating in API responses
+Subsonic.EnableAverageRating = "true"
+
+# Minimum similarity score (0-100) for matching similar songs from external sources to local library
+SimilarSongsMatchThreshold = 85
