@@ -46,17 +46,41 @@ EnableArtworkPrecache = "true"
 # Controls whether the player in the UI will animate the album cover (rotation)
 EnableCoverAnimation = "__ENABLE_ANIMATION__"
 
+# Enable uploading custom artwork for playlists and artists.
+EnableArtworkUpload = "true"
+
+# Enable fetching album art URLs from #EXTALBUMARTURL directives in M3U playlists. 
+EnableM3UExternalAlbumArt = "false"
+
+# Priority list for disc-level cover art sources. 
+DiscArtPriority = "disc*.*, cd*.*, cover.*, folder.*, front.*, discsubtitle, embedded"
+
+# Folder name to search for artist images within the library.
+#ArtistImageFolder
+
+# Search backend to use (fts for FTS5 full-text search).
+Search.Backend = "fts"
+
+# URL to redirect to when logging out with external authentication.
+ExtAuth.LogoutURL = ""
+
+# Append album version/edition to album names in Subsonic API responses. 
+Subsonic.AppendAlbumVersion = "true"
+
+# Debounce delay for the UI search field.
+#UISearchDebounceMs
+
 # How long Navidrome will wait before closing web ui idle sessions
 SessionTimeout = "24h"
 
 # Set JPEG quality percentage for resized cover art images
-CoverJpegQuality = "75"
+CoverArtQuality = "75"
 
 #Configure the order to look for cover art images. Use special embedded value to get embedded images from the audio files
 CoverArtPriority = "embedded, cover.*, folder.*, front.*"
 
 # Match query strings anywhere in searchable fields, not only in word boundaries. Useful for languages where words are not space separated
-SearchFullString = "false"
+Search.FullString = "false"
 
 # List of ignored articles when sorting/indexing artists
 IgnoredArticles = "The El La Los Las Le Les Os As O A"
@@ -78,12 +102,6 @@ LastFM.Secret = ""
 
 # Now supports comma-separated list of languages (e.g., "de,fr,en") for metadata fallback
 LastFM.Language = "fr,en"
-
-# Spotify Client ID
-Spotify.ID = ""
-
-# Spotify Client Secret
-Spotify.Secret = ""
 
 #Set this to false to completely disable Deezer integration for artist images
 Deezer.Enabled = "true"
