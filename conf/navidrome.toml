@@ -58,6 +58,12 @@ EnableArtworkUpload = "true"
 # Enable fetching album art URLs from #EXTALBUMARTURL directives in M3U playlists. 
 EnableM3UExternalAlbumArt = "false"
 
+# Opt-in to WebP encoding for resized artwork. When false (default), Navidrome uses JPEG/PNG (preserving the original source format), avoiding the WebP WASM encoder overhead that caused slow image processing on low-power hardware in v0.61.0. Set to true to re-enable WebP output. 
+EnableWebPEncoding = "false"
+
+# Size (in pixels, 200–1200) of cover art requested by the web UI. It was increased from 300px to 600px in 0.61.0; now configurable and defaulting to 300px to reduce image encoding load on low-power hardware.
+UICoverArtSize = "300"
+
 # Priority list for disc-level cover art sources. 
 DiscArtPriority = "disc*.*, cd*.*, cover.*, folder.*, front.*, discsubtitle, embedded"
 
