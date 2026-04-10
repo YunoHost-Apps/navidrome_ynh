@@ -51,11 +51,11 @@ chmod +x "$install_dir/navidrome"
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
-ynh_script_progression "Adding $app's configuration files..."
+#ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
+#ynh_config_add --template="navidrome.toml" --destination="$data_dir/navidrome.toml"
 
-chmod 600 "$data_dir/navidrome.toml"
+#chmod 600 "$data_dir/navidrome.toml"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS

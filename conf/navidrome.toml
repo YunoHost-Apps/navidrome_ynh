@@ -16,6 +16,12 @@ BaseURL = "__PATH__"
 # Configure periodic scans using “cron” syntax. To disable it altogether, set it to "" (empty string)
 Scanner.Schedule = "@every 10m"
 
+# Enable/disable the scanner. Set to false to disable automatic scanning of the music library.
+Scanner.Enabled = "true"
+
+# Enable/disable the Now Playing feature that tracks what songs users are currently listening to. When disabled, the “Now Playing” functionality and admin panel will be unavailable
+EnableNowPlaying = "true"
+
 # Enables transcoding configuration in the UI
 EnableTranscodingConfig = "__ENABLE_TRANSCODING__"
 
@@ -174,10 +180,10 @@ FFmpegPath = "/usr/bin/ffmpeg"
 Plugins.Enabled = true
 
 # Path to the plugins directory. Default: $DataFolder/Plugins
-Plugins.Folder="__DATA_DIR__/Plugins"
+Plugins.Folder="__DATA_DIR__/plugins"
 
 # Maximum cache size for storing compiled plugin WASM modules
-Plugins.CacheSiz = "200MB"
+Plugins.CacheSize = "200MB"
 
 # Automatically detect new/changed/removed plugins
 Plugins.AutoReload = "false"
