@@ -15,6 +15,7 @@ ynh_script_progression "Removing system configurations related to $app..."
 if ynh_hide_warnings yunohost service status "$app" >/dev/null; then
     yunohost service remove "$app"
 fi
+
 ynh_config_remove_systemd
 
 ynh_config_remove_nginx
